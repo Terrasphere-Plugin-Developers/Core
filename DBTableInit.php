@@ -4,30 +4,31 @@ namespace Terrasphere\Core;
 
 // use XF\Db\Schema\Alter;
 use XF\Db\Schema\Create;
+use XF\Db\SchemaManager;
 
 trait DBTableInit
 {
-    protected function installTables(Setup $setup)
+    protected function installTables(SchemaManager $sm)
     {
-        $this->masteryEnumTable($setup, "save");
-        $this->masteryEnumTable($setup, "role");
-        $this->masteryEnumTable($setup, "expertise");
-        $this->masteryTypeTable($setup);
+        $this->masteryEnumTable($sm, "save");
+        $this->masteryEnumTable($sm, "role");
+        $this->masteryEnumTable($sm, "expertise");
+        $this->masteryTypeTable($sm);
 
-        $this->masteryTable($setup);
+        $this->masteryTable($sm);
 
         // etc...
     }
 
     // Drops all tables for the addon
-    protected  function uninstallTables(Setup $setup)
+    protected  function uninstallTables(SchemaManager $sm)
     {
-        $setup->schemaManager()->dropTable("xf_terrasphere_core_mastery_save");
-        $setup->schemaManager()->dropTable("xf_terrasphere_core_mastery_role");
-        $setup->schemaManager()->dropTable("xf_terrasphere_core_mastery_expertise");
-        $setup->schemaManager()->dropTable("xf_terrasphere_core_mastery_type");
+        $sm->dropTable("xf_terrasphere_core_mastery_save");
+        $sm->dropTable("xf_terrasphere_core_mastery_role");
+        $sm->dropTable("xf_terrasphere_core_mastery_expertise");
+        $sm->dropTable("xf_terrasphere_core_mastery_type");
 
-        $setup->schemaManager()->dropTable("xf_terrasphere_core_mastery");
+        $sm->dropTable("xf_terrasphere_core_mastery");
 
         // etc...
     }
@@ -37,9 +38,9 @@ trait DBTableInit
     /** __________________________________ */
 
     // a defined schema to install the "enum" tables that the mastery needs since they all follow the same
-    private  function masteryEnumTable(Setup $setup, string $tableName)
+    private  function masteryEnumTable(SchemaManager $sm, string $tableName)
     {
-        $setup->schemaManager()->createTable(
+        $sm->createTable(
             "xf_terrasphere_core_mastery_".$tableName, function (create $table) use ($tableName)
             {
                 $table->addColumn($tableName."_id","int")->autoIncrement();
@@ -48,9 +49,9 @@ trait DBTableInit
         );
     }
 
-    private  function masteryTypeTable(Setup $setup)
+    private  function masteryTypeTable(SchemaManager $sm)
     {
-        $setup->schemaManager()->createTable(
+        $sm->createTable(
             "xf_terrasphere_core_mastery_type", function (create $table)
             {
                 $table->addColumn("mastery_type_id","int")->autoIncrement();
@@ -60,9 +61,9 @@ trait DBTableInit
         );
     }
 
-    private  function masteryTable(Setup $setup)
+    private  function masteryTable(SchemaManager $sm)
     {
-        $setup->schemaManager()->createTable(
+        $sm->createTable(
             "xf_terrasphere_core_mastery", function(create $table) {
                 $table->addColumn("mastery_id","int")->autoIncrement();
                 $table->addColumn("save_id","int");

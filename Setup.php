@@ -25,12 +25,12 @@ class Setup extends AbstractSetup
 	public function installStep1()
     {
         // Initializes all tables for the addon
-        $this->installTables($this);
+        $this->installTables($this->schemaManager());
     }
 
     public function uninstallStep1()
     {
         // Drops all tables from the addon
-	    $this->uninstallTables($this);
+	    $this->uninstallTables($this->schemaManager());
     }
 }
