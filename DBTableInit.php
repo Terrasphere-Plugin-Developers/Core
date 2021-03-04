@@ -5,22 +5,22 @@ namespace Terrasphere\Core;
 // use XF\Db\Schema\Alter;
 use XF\Db\Schema\Create;
 
-class DBTableInit
+trait DBTableInit
 {
-    public static function installTables(Setup $setup)
+    protected function installTables(Setup $setup)
     {
-        self::masteryEnumTable($setup, "save");
-        self::masteryEnumTable($setup, "role");
-        self::masteryEnumTable($setup, "expertise");
-        self::masteryTypeTable($setup);
+        $this->masteryEnumTable($setup, "save");
+        $this->masteryEnumTable($setup, "role");
+        $this->masteryEnumTable($setup, "expertise");
+        $this->masteryTypeTable($setup);
 
-        self::masteryTable();
+        $this->masteryTable($setup);
 
         // etc...
     }
 
     // Drops all tables for the addon
-    public static function uninstallTables(Setup $setup)
+    protected  function uninstallTables(Setup $setup)
     {
         $setup->schemaManager()->dropTable("xf_terrasphere_core_mastery_save");
         $setup->schemaManager()->dropTable("xf_terrasphere_core_mastery_role");
@@ -37,7 +37,7 @@ class DBTableInit
     /** __________________________________ */
 
     // a defined schema to install the "enum" tables that the mastery needs since they all follow the same
-    private static function masteryEnumTable(Setup $setup, string $tableName)
+    private  function masteryEnumTable(Setup $setup, string $tableName)
     {
         $setup->schemaManager()->createTable(
             "xf_terrasphere_core_mastery_".$tableName, function (create $table) use ($tableName)
@@ -48,7 +48,7 @@ class DBTableInit
         );
     }
 
-    private static function masteryTypeTable(Setup $setup)
+    private  function masteryTypeTable(Setup $setup)
     {
         $setup->schemaManager()->createTable(
             "xf_terrasphere_core_mastery_type", function (create $table)
@@ -60,7 +60,7 @@ class DBTableInit
         );
     }
 
-    private static function masteryTable(Setup $setup)
+    private  function masteryTable(Setup $setup)
     {
         $setup->schemaManager()->createTable(
             "xf_terrasphere_core_mastery", function(create $table) {

@@ -19,17 +19,18 @@ class Setup extends AbstractSetup
 	use StepRunnerInstallTrait;
 	use StepRunnerUpgradeTrait;
 	use StepRunnerUninstallTrait;
+	use DBTableInit;
 
 	//call this to execute all installSteps
 	public function installStep1()
     {
         // Initializes all tables for the addon
-        DBTableInit::installTables($this);
+        $this->installTables($this);
     }
 
     public function uninstallStep1()
     {
         // Drops all tables from the addon
-	    DBTableInit::uninstallTables($this);
+	    $this->uninstallTables($this);
     }
 }
