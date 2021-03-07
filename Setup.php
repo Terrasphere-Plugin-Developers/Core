@@ -31,7 +31,7 @@ class Setup extends AbstractSetup
     }
 
     public function installStep2(){
-        $this->populateExpertise($this);
+        $this->fillMasteryEnumTables($this);
     }
 
     public function uninstallStep1()
