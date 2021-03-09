@@ -1,0 +1,11 @@
+{
+    "route_type": "admin",
+    "route_prefix": "terrasphere-core",
+    "sub_name": "masteries",
+    "format": "masteries",
+    "build_class": "",
+    "build_method": "",
+    "controller": "Terrasphere\\Core:Masteries",
+    "context": "terrasphereCoreMasteryList",
+    "action_prefix": ""
+}
