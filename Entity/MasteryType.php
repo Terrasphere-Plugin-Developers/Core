@@ -9,12 +9,13 @@ class MasteryType extends Entity
     public static function getStructure(Structure $structure) : Structure
     {
         $structure->table = 'xf_terrasphere_core_mastery_type';
-        $structure->shortName = 'TS:MasteryType';
-        $structure->primaryKey = 'type_id';
+        $structure->shortName = 'Terrasphere/Core:MasteryType';
+        $structure->primaryKey = 'mastery_type_id';
 
         $structure->columns = [
-            'type_id' => ['type' => self::UINT, 'required' => true],
-            'name' => ['type' => self::STR,'maxLength' => 50,'required' => true]
+            'mastery_type_id' => ['type' => self::UINT, 'required' => true],
+            'name' => ['type' => self::STR,'maxLength' => 50,'required' => true],
+            'cap_per_character' => ['type' => self::UINT, 'default' => 9999]
         ];
 
         return $structure;

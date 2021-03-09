@@ -16,5 +16,7 @@ class MasteryRole extends Entity{
             'role_id' => ['type' => self::UINT, 'required' => true],
             'name' => ['type' => self::STR,'maxLength' => 50,'required' => true]
         ];
+
+        return  $structure;
     }
 }
