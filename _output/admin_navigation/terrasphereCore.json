@@ -1,0 +1,10 @@
+{
+    "parent_navigation_id": "",
+    "display_order": 14000,
+    "link": "terrasphere-core",
+    "icon": "fa-dice-d20",
+    "admin_permission_id": "terrasphereCore",
+    "debug_only": false,
+    "development_only": false,
+    "hide_no_children": false
+}

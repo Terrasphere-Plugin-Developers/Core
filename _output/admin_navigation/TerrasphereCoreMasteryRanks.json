@@ -1,0 +1,10 @@
+{
+    "parent_navigation_id": "TerrasphereCoreMasteries",
+    "display_order": 60,
+    "link": "terrasphere-core/masteries/ranks",
+    "icon": "",
+    "admin_permission_id": "terrasphereCore",
+    "debug_only": false,
+    "development_only": false,
+    "hide_no_children": false
+}
