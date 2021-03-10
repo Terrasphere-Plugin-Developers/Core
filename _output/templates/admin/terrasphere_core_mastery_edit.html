@@ -1,0 +1,41 @@
+<xf:if is="$mastery.isInsert()">
+	<xf:title>{{ phrase('terrasphere_core_add_mastery') }}</xf:title>
+<xf:else />
+	<xf:title>{{ phrase('edit') }} ({$mastery.display_name})</xf:title>
+</xf:if>
+
+<xf:form action="{{ link('terrasphere-core/masteries/save', $mastery) }}" class="block" ajax="true">
+	<div class="block-container">
+		<div class="block-body">
+			<xf:textboxrow name="display_name" value="{$mastery.display_name}"
+				label="{{ phrase('name') }}" />
+			
+			<xf:selectrow name="mastery_type_id" value="{$mastery.mastery_type_id}"
+						  label="{{ phrase('terrasphere_core_mastery_type') }}"
+						  explain="{{ phrase('terrasphere_core_mastery_type_explain') }}">
+				<xf:foreach loop="$masteryTypes" value="$masteryType">
+					<xf:option value="{$masteryType.mastery_type_id}">{$masteryType.name}</xf:option>
+				</xf:foreach>
+			</xf:selectrow>
+			
+			<xf:selectrow name="role_id" value="{$mastery.role_id}" label="{{ phrase('terrasphere_core_role') }}">
+				<xf:foreach loop="$roleTypes" value="$roleType">
+					<xf:option value="{$roleType.role_id}">{$roleType.name}</xf:option>
+				</xf:foreach>
+			</xf:selectrow>
+			
+			<xf:selectrow name="save_id" value="{$mastery.save_id}" label="{{ phrase('terrasphere_core_save') }}">
+				<xf:foreach loop="$saveTypes" value="$saveType">
+					<xf:option value="{$saveType.save_id}">{$saveType.name}</xf:option>
+				</xf:foreach>
+			</xf:selectrow>
+			
+			<xf:selectrow name="expertise_id" value="{$mastery.expertise_id}" label="{{ phrase('terrasphere_core_expertise') }}">
+				<xf:foreach loop="$expertiseTypes" value="$expertiseType">
+					<xf:option value="{$expertiseType.expertise_id}">{$expertiseType.name}</xf:option>
+				</xf:foreach>
+			</xf:selectrow>
+		</div>
+		<xf:submitrow sticky="true" icon="save" />
+	</div>
+</xf:form>

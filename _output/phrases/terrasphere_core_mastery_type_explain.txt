@@ -1,0 +1,1 @@
+Can be used to place this mastery into a special category, which may enforce restrictions. Setting a special type will cause this mastery to display separate from it's role in various places.
