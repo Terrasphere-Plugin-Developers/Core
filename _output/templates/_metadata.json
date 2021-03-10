@@ -12,7 +12,12 @@
     "admin/terrasphere_core_mastery_traits.html": {
         "version_id": 1000010,
         "version_string": "1.0.0 Alpha",
-        "hash": "db17c2dcf4f47b275417e45cf1f5f045"
+        "hash": "ba161fc25fdd5b70b2e479728ce62a8d"
+    },
+    "admin/terrasphere_core_mastery_type_edit.html": {
+        "version_id": 1000010,
+        "version_string": "1.0.0 Alpha",
+        "hash": "44b180cbc7b982e84696411a38f24a97"
     },
     "public/terrasphere_core_mastery_save_edit.html": {
         "version_id": 1000010,

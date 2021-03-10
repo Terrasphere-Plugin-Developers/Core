@@ -1,0 +1,19 @@
+<xf:if is="$masteryType.isInsert()">
+	<xf:title>{{ phrase('terrasphere_core_add_mastery_type') }}</xf:title>
+<xf:else />
+	<xf:title>{{ phrase('edit') }} ({$masteryType.name})</xf:title>
+</xf:if>
+
+<xf:form action="{{ link('terrasphere-core/masteries/traits/mastery-type/save', $masteryType) }}" class="block" ajax="true">
+	<div class="block-container">
+		<div class="block-body">
+			<xf:textboxrow name="name" value="{$masteryType.name}"
+				label="{{ phrase('name') }}" />
+			
+			<xf:numberboxrow name="cap_per_character" value="{$masteryType.cap_per_character}" min="1" max="999" step="1"
+						   label="{{ phrase('terrasphere_core_mastery_type_cap') }}"
+						   explain="{{ phrase('terrasphere_core_mastery_type_cap_explain') }}" />
+		</div>
+		<xf:submitrow sticky="true" icon="save" />
+	</div>
+</xf:form>

@@ -41,6 +41,12 @@
         "version_string": "1.0.0 Alpha",
         "hash": "8772133c33d3ae797d00da9b135e534d"
     },
+    "terrasphere_core_add_mastery_type.txt": {
+        "global_cache": false,
+        "version_id": 1000010,
+        "version_string": "1.0.0 Alpha",
+        "hash": "4f88b4b014e15e5b47e78bde4c4edc41"
+    },
     "terrasphere_core_expertise.txt": {
         "global_cache": false,
         "version_id": 1000010,
@@ -64,6 +70,18 @@
         "version_id": 1000010,
         "version_string": "1.0.0 Alpha",
         "hash": "5017264799245d26e9aee06091a61996"
+    },
+    "terrasphere_core_mastery_type_cap.txt": {
+        "global_cache": false,
+        "version_id": 1000010,
+        "version_string": "1.0.0 Alpha",
+        "hash": "f148520e8564b1e07aacc238688cd548"
+    },
+    "terrasphere_core_mastery_type_cap_explain.txt": {
+        "global_cache": false,
+        "version_id": 1000010,
+        "version_string": "1.0.0 Alpha",
+        "hash": "54cb0a80435467fefa6d380dc15b8b32"
     },
     "terrasphere_core_mastery_type_explain.txt": {
         "global_cache": false,

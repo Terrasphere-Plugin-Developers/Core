@@ -13,7 +13,7 @@ class MasteryType extends Entity
         $structure->primaryKey = 'mastery_type_id';
 
         $structure->columns = [
-            'mastery_type_id' => ['type' => self::UINT, 'required' => true],
+            'mastery_type_id' => ['type' => self::UINT, 'autoIncrement' => true],
             'name' => ['type' => self::STR,'maxLength' => 50,'required' => true],
             'cap_per_character' => ['type' => self::UINT, 'default' => 9999]
         ];

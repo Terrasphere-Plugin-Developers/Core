@@ -2,6 +2,18 @@
     "admin_terrasphere-core_masteries-mastery-list.json": {
         "hash": "08120c3724218949cd168768cfa0f411"
     },
+    "admin_terrasphere-core_masteries-traits-expertise.json": {
+        "hash": "038bf938bd3ef02b5356202ac796609d"
+    },
+    "admin_terrasphere-core_masteries-traits-mastery-type.json": {
+        "hash": "fc9d8584403d796746966e77a8b1e673"
+    },
+    "admin_terrasphere-core_masteries-traits-role.json": {
+        "hash": "f46e1592553007e2ff29a83085edca1f"
+    },
+    "admin_terrasphere-core_masteries-traits-save.json": {
+        "hash": "1dc4c5ef5f9da0f19e14b1b227add232"
+    },
     "admin_terrasphere-core_masteries-traits.json": {
         "hash": "83f8f2b994cd8dc092ea73b33c2767f4"
     },

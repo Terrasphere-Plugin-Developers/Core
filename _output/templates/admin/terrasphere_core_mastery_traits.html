@@ -7,7 +7,7 @@
 		
 		<h2 class="block-header">
 			{{ phrase('terrasphere_core_mastery_type') }}
-			<xf:button href="{{ link('terrasphere-core/masteries/traits/addtype') }}" icon="add" style="float: right;">{{ phrase('add') }}</xf:button>
+			<xf:button href="{{ link('terrasphere-core/masteries/traits/mastery-type/add') }}" icon="add" style="float: right;">{{ phrase('add') }}</xf:button>
 		</h2>
 		<div class="block-body">
 			<xf:datalist>
@@ -15,7 +15,7 @@
 					<xf:if is="$specialType.mastery_type_id != 1">
 						<xf:datarow>
 							<xf:main hash="{$specialType.mastery_type_id}"
-									 href="{{ link('terrasphere-core/masteries/traits/edittype', $specialType) }}"
+									 href="{{ link('terrasphere-core/masteries/traits/mastery-type/edit', $specialType) }}"
 									 label="{$specialType.name}">
 							</xf:main>
 						</xf:datarow>
@@ -26,14 +26,14 @@
 		
 		<h2 class="block-header">
 			{{ phrase('terrasphere_core_role') }}
-			<xf:button href="{{ link('terrasphere-core/masteries/traits/addrole') }}" icon="add" style="float: right;">{{ phrase('add') }}</xf:button>
+			<xf:button href="{{ link('terrasphere-core/masteries/traits/role/add') }}" icon="add" style="float: right;">{{ phrase('add') }}</xf:button>
 		</h2>
 		<div class="block-body">
 			<xf:datalist>
 				<xf:foreach loop="$roles" value="$role">
 					<xf:datarow>
 						<xf:main hash="{$role.role_id}"
-								 href="{{ link('terrasphere-core/masteries/traits/editrole', $role) }}"
+								 href="{{ link('terrasphere-core/masteries/traits/role/edit', $role) }}"
 								 label="{$role.name}">
 						</xf:main>
 					</xf:datarow>
@@ -43,14 +43,14 @@
 		
 		<h2 class="block-header">
 			{{ phrase('terrasphere_core_save') }}
-			<xf:button href="{{ link('terrasphere-core/masteries/traits/addsave') }}" icon="add" style="float: right;">{{ phrase('add') }}</xf:button>
+			<xf:button href="{{ link('terrasphere-core/masteries/traits/save/add') }}" icon="add" style="float: right;">{{ phrase('add') }}</xf:button>
 		</h2>
 		<div class="block-body">
 			<xf:datalist>
 				<xf:foreach loop="$saves" value="$save">
 					<xf:datarow>
 						<xf:main hash="{$save.save_id}"
-								 href="{{ link('terrasphere-core/masteries/traits/editsave', $save) }}"
+								 href="{{ link('terrasphere-core/masteries/traits/save/edit', $save) }}"
 								 label="{$save.name}">
 						</xf:main>
 					</xf:datarow>
@@ -60,14 +60,14 @@
 		
 		<h2 class="block-header">
 			{{ phrase('terrasphere_core_expertise') }}
-			<xf:button href="{{ link('terrasphere-core/masteries/traits/addexpertise') }}" icon="add" style="float: right;">{{ phrase('add') }}</xf:button>
+			<xf:button href="{{ link('terrasphere-core/masteries/traits/expertise/add') }}" icon="add" style="float: right;">{{ phrase('add') }}</xf:button>
 		</h2>
 		<div class="block-body">
 			<xf:datalist>
 				<xf:foreach loop="$expertises" value="$expertise">
 					<xf:datarow>
 						<xf:main hash="{$expertise.expertise_id}"
-								 href="{{ link('terrasphere-core/masteries/traits/editexpertise', $expertise) }}"
+								 href="{{ link('terrasphere-core/masteries/traits/expertise/edit', $expertise) }}"
 								 label="{$expertise.name}">
 						</xf:main>
 					</xf:datarow>
