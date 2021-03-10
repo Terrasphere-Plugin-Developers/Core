@@ -7,9 +7,6 @@ use XF\Admin\Controller\AbstractController;
 
 class MasteryList extends AbstractController
 {
-    /**
-     * @return \XF\Mvc\Reply\View
-     */
     public function actionIndex(): \XF\Mvc\Reply\View
     {
         $viewParams = [];

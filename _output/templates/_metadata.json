@@ -9,6 +9,11 @@
         "version_string": "1.0.0 Alpha",
         "hash": "eb39eeccb54212bacad6e71ef1d0cd99"
     },
+    "admin/terrasphere_core_mastery_traits.html": {
+        "version_id": 1000010,
+        "version_string": "1.0.0 Alpha",
+        "hash": "db17c2dcf4f47b275417e45cf1f5f045"
+    },
     "public/terrasphere_core_mastery_save_edit.html": {
         "version_id": 1000010,
         "version_string": "1.0.0 Alpha",

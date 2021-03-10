@@ -17,35 +17,17 @@
         "version_string": "1.0.0 Alpha",
         "hash": "d6ab5a0fc7bb68ad44cd2c779038c907"
     },
-    "admin_navigation.terrasphereCoreMasteryExpertises.txt": {
-        "global_cache": false,
-        "version_id": 1000010,
-        "version_string": "1.0.0 Alpha",
-        "hash": "f837394180f8ac1e9eb240fe6ee250d6"
-    },
     "admin_navigation.terrasphereCoreMasteryList.txt": {
         "global_cache": false,
         "version_id": 1000010,
         "version_string": "1.0.0 Alpha",
         "hash": "6b3a5db090d0454656c778693b02a7fa"
     },
-    "admin_navigation.terrasphereCoreMasteryRoles.txt": {
+    "admin_navigation.terrasphereCoreMasteryTraits.txt": {
         "global_cache": false,
         "version_id": 1000010,
         "version_string": "1.0.0 Alpha",
-        "hash": "a5cd3ed116608dac017f14c046ea56bf"
-    },
-    "admin_navigation.terrasphereCoreMasterySaves.txt": {
-        "global_cache": false,
-        "version_id": 1000010,
-        "version_string": "1.0.0 Alpha",
-        "hash": "e25296a81473a613c57e8f5027a63963"
-    },
-    "admin_navigation.terrasphereCoreMasteryTypes.txt": {
-        "global_cache": false,
-        "version_id": 1000010,
-        "version_string": "1.0.0 Alpha",
-        "hash": "f2d346b1bb7c1c85ab6f7f21e3666b9f"
+        "hash": "3e9a1b2435f89e060ff7f6e239c664d8"
     },
     "admin_permission.terrasphereCore.txt": {
         "global_cache": false,
@@ -70,6 +52,12 @@
         "version_id": 1000010,
         "version_string": "1.0.0 Alpha",
         "hash": "85974df9883c6a22a20746546451a294"
+    },
+    "terrasphere_core_mastery_traits.txt": {
+        "global_cache": false,
+        "version_id": 1000010,
+        "version_string": "1.0.0 Alpha",
+        "hash": "3e9a1b2435f89e060ff7f6e239c664d8"
     },
     "terrasphere_core_mastery_type.txt": {
         "global_cache": false,

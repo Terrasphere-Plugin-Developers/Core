@@ -8,19 +8,10 @@
     "terrasphereCore.json": {
         "hash": "d0e743c360c8520b57a123e142f207ef"
     },
-    "terrasphereCoreMasteryExpertises.json": {
-        "hash": "f40157828bcffec952504f41505c3c36"
-    },
     "terrasphereCoreMasteryList.json": {
         "hash": "46202fd005b3cc2caf4a0bc7ddf2e3f7"
     },
-    "terrasphereCoreMasteryRoles.json": {
-        "hash": "3c381c52e3baa4f2636ef7272cd70ceb"
-    },
-    "terrasphereCoreMasterySaves.json": {
-        "hash": "2be382ffcb537c2391809028b14b0a89"
-    },
-    "terrasphereCoreMasteryTypes.json": {
-        "hash": "7a623aef17572eb376e9f71a7fdb8102"
+    "terrasphereCoreMasteryTraits.json": {
+        "hash": "7e37d299d6bc1be5c8277a1a27954b84"
     }
 }
