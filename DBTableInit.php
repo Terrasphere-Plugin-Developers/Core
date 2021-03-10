@@ -21,7 +21,7 @@ trait DBTableInit
     }
 
     // Drops all tables for the addon
-    protected  function uninstallTables(SchemaManager $sm)
+    protected function uninstallTables(SchemaManager $sm)
     {
         $sm->dropTable("xf_terrasphere_core_mastery_save");
         $sm->dropTable("xf_terrasphere_core_mastery_role");
@@ -38,7 +38,7 @@ trait DBTableInit
     /** __________________________________ */
 
     // a defined schema to install the "enum" tables that the mastery needs since they all follow the same
-    private  function masteryEnumTable(SchemaManager $sm, string $tableName)
+    private function masteryEnumTable(SchemaManager $sm, string $tableName)
     {
         $sm->createTable(
             "xf_terrasphere_core_mastery_".$tableName, function (create $table) use ($tableName)
@@ -49,7 +49,7 @@ trait DBTableInit
         );
     }
 
-    private  function masteryTypeTable(SchemaManager $sm)
+    private function masteryTypeTable(SchemaManager $sm)
     {
         $sm->createTable(
             "xf_terrasphere_core_mastery_type", function (create $table)
@@ -61,7 +61,7 @@ trait DBTableInit
         );
     }
 
-    private  function masteryTable(SchemaManager $sm)
+    private function masteryTable(SchemaManager $sm)
     {
         $sm->createTable(
             "xf_terrasphere_core_mastery", function(create $table) {
@@ -69,7 +69,7 @@ trait DBTableInit
                 $table->addColumn("save_id","int");
                 $table->addColumn("role_id","int");
                 $table->addColumn("expertise_id","int");
-                $table->addColumn("type_id","int");
+                $table->addColumn("mastery_type_id","int");
                 $table->addColumn("display_name","varchar",50)->setDefault('');;
                 $table->addColumn("icon_url","varchar",200)->setDefault('');
                 $table->addColumn("thumbnail_url","varchar",200)->setDefault('');

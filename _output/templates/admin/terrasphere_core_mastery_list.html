@@ -6,10 +6,21 @@
 
 <div class="block">
 	<div class="block-container">
-		<h2 class="block-header">Normal Masteries</h2>
-		<div class="block-body">
-			Nothing here...
-		</div>
+		<xf:foreach loop="$masteryGroups" value="$masteryGroup">
+			<h2 class="block-header">{$masteryGroup.name}</h2>
+			<div class="block-body">
+				<xf:datalist>
+					<xf:foreach loop="{$masteryGroup.masteries}" value="$mastery">
+						<xf:datarow>
+							<xf:main hash="{$mastery.mastery_id}"
+									 href="{{ link('terrasphere-core/masteries/edit', $mastery) }}"
+									 label="{$mastery.display_name}">
+							</xf:main>
+						</xf:datarow>
+					</xf:foreach>
+				</xf:datalist>
+			</div>
+		</xf:foreach>
 		<div class="block-footer">
 			Nothing here either...
 		</div>

@@ -9,7 +9,7 @@ class MasteryRole extends Entity{
     public static function getStructure(Structure $structure) : Structure
     {
         $structure->table = 'xf_terrasphere_core_mastery_role';
-        $structure->shortName = 'TS:MasteryRole';
+        $structure->shortName = 'Terrasphere\Core:MasteryRole';
         $structure->primaryKey = 'role_id';
 
         $structure->columns = [

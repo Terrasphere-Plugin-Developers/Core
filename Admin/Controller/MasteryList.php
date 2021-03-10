@@ -14,23 +14,10 @@ class MasteryList extends AbstractController
     {
         $viewParams = [];
 
-        /** @var \Terrasphere\Core\Entity\MasteryType[] $masteryTypes */
-        //$masteryTypes = $this->finder('Terrasphere\Core:MasteryType')->fetch();
-        //$masteryTypes = $this->finder('TS:MasteryType')->fetch();
-        $something = XF::em()->find('Terrasphere\Core:MasteryType',1);
+        /** @var \Terrasphere\Core\Repository\Mastery $masteryRepo */
+        $masteryRepo = $this->repository('Terrasphere\Core:Mastery');
 
-
-        /**
-         * For each mastery type, create an array with the type's name and another array populated by the masteries of
-         * that mastery type, then add the name|mastery-array pair to $viewParams.
-         */
-        /*foreach ($masteryTypes as $masteryType)
-        {
-            $viewParams[$masteryType['type_id']] = [
-                'type_name' => $masteryType['name'],
-                'mastery_list' => $this->finder('Terrasphere\Core:Mastery')->where('type_id', $masteryType['type_id'])->fetch()
-            ];
-        }*/
+        $viewParams['masteryGroups'] = $masteryRepo->getMasteryListGroupedByClassification();
 
         return $this->view('Terrasphere/Core:Mastery/List', 'terrasphere_core_mastery_list', $viewParams);
     }

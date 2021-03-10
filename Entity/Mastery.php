@@ -10,13 +10,14 @@ class Mastery extends Entity
     public static function getStructure(Structure $structure) : Structure
     {
         $structure->table = 'xf_terrasphere_core_mastery';
-        $structure->shortName = 'TS:Mastery';
+        $structure->shortName = 'Terrasphere\Core:Mastery';
         $structure->primaryKey = 'mastery_id';
         $structure->columns = [
+            'mastery_id' => ['type' => self::UINT, 'required' => true, 'autoIncrement' => true],
             'save_id' => ['type' => self::UINT, 'required' => true],
             'role_id' => ['type' => self::UINT,'required' => true],
             'expertise_id' => ['type' => self::UINT,'required' => true],
-            'type_id' => ['type' => self::UINT,'required' => true],
+            'mastery_type_id' => ['type' => self::UINT,'required' => true],
             'display_name' => ['type' => self::STR, 'required' => true],
             'icon_url' => ['type' => self::STR],
             'thumbnail_url' => ['type' => self::STR]
@@ -26,27 +27,27 @@ class Mastery extends Entity
 
         $structure->relations = [
             'MasteryExpertise' => [
-                'entity' => 'TS:MasteryExpertise',
+                'entity' => 'Terrasphere\Core:MasteryExpertise',
                 'type' => SELF::TO_ONE,
                 'conditions' => 'save_id',
                 'primary' => true //TODO: Does this mean its the primary key of the other table?
             ],
             'MasteryRole' => [
-                'entity' => 'TS:MasteryRole',
+                'entity' => 'Terrasphere\Core:MasteryRole',
                 'type' => SELF::TO_ONE,
                 'conditions' => 'role_id',
                 'primary' => true
             ],
             'MasterySave' => [
-                'entity' => 'TS:MasterySave',
+                'entity' => 'Terrasphere\Core:MasterySave',
                 'type' => SELF::TO_ONE,
                 'conditions' => 'save_id',
                 'primary' => true
             ],
             'MasteryType' => [
-                'entity' => 'TS:MasteryType',
+                'entity' => 'Terrasphere\Core:MasteryType',
                 'type' => SELF::TO_ONE,
-                'conditions' => 'type_id',
+                'conditions' => 'mastery_type_id',
                 'primary' => true
             ],
         ];
