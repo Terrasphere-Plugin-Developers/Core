@@ -1,0 +1,15 @@
+<xf:if is="$save.isInsert()">
+	<xf:title>{{ phrase('terrasphere_core_add_save') }}</xf:title>
+<xf:else />
+	<xf:title>{{ phrase('edit') }} ({$save.name})</xf:title>
+</xf:if>
+
+<xf:form action="{{ link('terrasphere-core/masteries/traits/save/save', $save) }}" class="block" ajax="true">
+	<div class="block-container">
+		<div class="block-body">
+			<xf:textboxrow name="name" value="{$save.name}"
+				label="{{ phrase('name') }}" />
+		</div>
+		<xf:submitrow sticky="true" icon="save" />
+	</div>
+</xf:form>

@@ -12,7 +12,7 @@ class MasterySave extends Entity{
         $structure->primaryKey = 'save_id';
 
         $structure->columns = [
-            'save_id' => ['type' => self::UINT, 'required' => true],
+            'save_id' => ['type' => self::UINT, 'autoIncrement' => true],
             'name' => ['type' => self::STR,'maxLength' => 50,'required' => true]
         ];
 

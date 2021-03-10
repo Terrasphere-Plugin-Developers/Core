@@ -13,7 +13,7 @@ class MasteryRole extends Entity{
         $structure->primaryKey = 'role_id';
 
         $structure->columns = [
-            'role_id' => ['type' => self::UINT, 'required' => true],
+            'role_id' => ['type' => self::UINT, 'autoIncrement' => true],
             'name' => ['type' => self::STR,'maxLength' => 50,'required' => true]
         ];
 

@@ -1,0 +1,15 @@
+<xf:if is="$expertise.isInsert()">
+	<xf:title>{{ phrase('terrasphere_core_add_expertise') }}</xf:title>
+<xf:else />
+	<xf:title>{{ phrase('edit') }} ({$expertise.name})</xf:title>
+</xf:if>
+
+<xf:form action="{{ link('terrasphere-core/masteries/traits/expertise/save', $expertise) }}" class="block" ajax="true">
+	<div class="block-container">
+		<div class="block-body">
+			<xf:textboxrow name="name" value="{$expertise.name}"
+				label="{{ phrase('name') }}" />
+		</div>
+		<xf:submitrow sticky="true" icon="save" />
+	</div>
+</xf:form>

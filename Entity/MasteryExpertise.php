@@ -15,7 +15,7 @@ class MasteryExpertise extends Entity
         $structure->primaryKey = 'expertise_id';
 
         $structure->columns = [
-            'expertise_id' => ['type' => self::UINT, 'required' => true],
+            'expertise_id' => ['type' => self::UINT, 'autoIncrement' => true],
             'name' => ['type' => self::STR,'maxLength' => 50,'required' => true]
         ];
 
