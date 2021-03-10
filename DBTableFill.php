@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Terrasphere\Core;
-
 
 use Terrasphere\Core\Entity\MasteryExpertise;
 
@@ -23,7 +21,7 @@ trait DBTableFill
                 ["name" => 'Fitness'],
                 ["name" => 'Awareness'],
                 ["name" => 'Knowledge'],
-                ["name" =>'Presence']
+                ["name" => 'Presence']
             ]);
     }
 
@@ -48,7 +46,7 @@ trait DBTableFill
     private function populateMasteryTypeTable(Setup $setup) : void{
         $setup->db()->insertBulk('xf_terrasphere_core_mastery_type',
             [
-                ["name" => 'Normal',
+                ["name" => 'DEFAULT',
                     "cap_per_character" => 9999],
                 ["name" => 'Alter',
                     "cap_per_character" => 1]

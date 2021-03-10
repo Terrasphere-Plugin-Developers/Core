@@ -13,7 +13,7 @@ class Mastery extends Entity
         $structure->shortName = 'Terrasphere\Core:Mastery';
         $structure->primaryKey = 'mastery_id';
         $structure->columns = [
-            'mastery_id' => ['type' => self::UINT, 'required' => true, 'autoIncrement' => true],
+            'mastery_id' => ['type' => self::UINT, 'autoIncrement' => true],
             'save_id' => ['type' => self::UINT, 'required' => true],
             'role_id' => ['type' => self::UINT,'required' => true],
             'expertise_id' => ['type' => self::UINT,'required' => true],

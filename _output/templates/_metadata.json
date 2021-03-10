@@ -1,4 +1,9 @@
 {
+    "admin/terrasphere_core_mastery_edit.html": {
+        "version_id": 1000010,
+        "version_string": "1.0.0 Alpha",
+        "hash": "77d8f994b17e6319b9f26e84bff34b80"
+    },
     "admin/terrasphere_core_mastery_list.html": {
         "version_id": 1000010,
         "version_string": "1.0.0 Alpha",
