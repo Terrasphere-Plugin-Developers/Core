@@ -35,6 +35,42 @@
         "version_string": "1.0.0 Alpha",
         "hash": "0e73db3d69388a619bf9502d24d8cec7"
     },
+    "option.terrasphereCoreGPCurrency.txt": {
+        "global_cache": false,
+        "version_id": 1000010,
+        "version_string": "1.0.0 Alpha",
+        "hash": "4908109dab51cd161f3607825691b83d"
+    },
+    "option.terrasphereCoreMPCurrency.txt": {
+        "global_cache": false,
+        "version_id": 1000010,
+        "version_string": "1.0.0 Alpha",
+        "hash": "c4eac418c3bedff78c22ec8bd854d3c3"
+    },
+    "option_explain.terrasphereCoreGPCurrency.txt": {
+        "global_cache": false,
+        "version_id": 1000010,
+        "version_string": "1.0.0 Alpha",
+        "hash": "aa47e7fd3aa7a98096f5210d307825f2"
+    },
+    "option_explain.terrasphereCoreMPCurrency.txt": {
+        "global_cache": false,
+        "version_id": 1000010,
+        "version_string": "1.0.0 Alpha",
+        "hash": "3557c97ad2796a3fb620dba24e37b797"
+    },
+    "option_group.terrasphereCore.txt": {
+        "global_cache": false,
+        "version_id": 1000010,
+        "version_string": "1.0.0 Alpha",
+        "hash": "d6ab5a0fc7bb68ad44cd2c779038c907"
+    },
+    "option_group_description.terrasphereCore.txt": {
+        "global_cache": false,
+        "version_id": 1000010,
+        "version_string": "1.0.0 Alpha",
+        "hash": "5defcd02fda94f308a5485eaf5c1b546"
+    },
     "terrasphere_core_add_mastery.txt": {
         "global_cache": false,
         "version_id": 1000010,
