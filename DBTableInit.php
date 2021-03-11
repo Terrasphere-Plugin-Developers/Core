@@ -45,6 +45,7 @@ trait DBTableInit
             {
                 $table->addColumn($tableName."_id","int")->autoIncrement();
                 $table->addColumn("name","varchar",50)->setDefault('');
+                $table->addColumn("icon_url","varchar",999)->setDefault('');
             }
         );
     }
@@ -71,8 +72,8 @@ trait DBTableInit
                 $table->addColumn("expertise_id","int");
                 $table->addColumn("mastery_type_id","int");
                 $table->addColumn("display_name","varchar",50)->setDefault('');;
-                $table->addColumn("icon_url","varchar",200)->setDefault('');
-                $table->addColumn("thumbnail_url","varchar",200)->setDefault('');
+                $table->addColumn("icon_url","varchar",999)->setDefault('');
+                $table->addColumn("thumbnail_url","varchar",999)->setDefault('');
             }
         );
     }

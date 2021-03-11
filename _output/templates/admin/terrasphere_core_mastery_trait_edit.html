@@ -8,14 +8,26 @@
 <xf:form action="{{ link('terrasphere-core/masteries/traits/dumb', $trait,{'traitCategory' : $trait.entityHelperName}) }}" class="block" ajax="true">
     <div class="block-container">
         <div class="block-body">
-
             <xf:foreach loop="$trait.formStructure" key="$structureKey" value="$xfElement">
+				
 				<xf:if is="{$structureKey} == 'textboxrow'">
 					<xf:textboxrow
 					name="{$xfElement.name}"
 					value="{$xfElement.value}"
 					label="{$xfElement.label}"/>
-				</xf:if>										  
+				</xf:if>
+				
+				<xf:if is="{$structureKey} == 'icon_url'">
+					<xf:formrow label="{{ phrase('icon') }}">
+						<div class="inputGroup inputGroup--joined" data-xf-init="asset-upload" data-asset="{{$trait.entityHelperName . '-' . $structureKey . '-' . $trait.name}}">
+							<input type="text" class="input js-assetPath " name="icon_url" value="{{$trait.icon_url}}" dir="ltr" id="idkwhythisneedsanid">
+							<label class="inputGroup-text inputUploadButton" data-xf-init="tooltip" data-original-title="Upload file" id="idkwhythisneedsanideither">
+								<input type="file" class="js-uploadAsset" accept=".gif,.jpeg,.jpg,.jpe,.png">
+							</label>
+						</div>
+					</xf:formrow>
+				</xf:if>
+				
 			</xf:foreach>
         </div>
 		<xf:submitrow sticky="true" icon="save" />

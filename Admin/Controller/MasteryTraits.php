@@ -91,8 +91,7 @@ class MasteryTraits extends AbstractController
 
         $input = $this->filter([
             'name' => 'str',
-
-            //'icon_url' => 'str',
+            'icon_url' => 'str',
             //'thumbnail_url' => 'str',
         ]);
 

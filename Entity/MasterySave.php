@@ -13,7 +13,8 @@ class MasterySave extends Entity implements iTraitCommon {
 
         $structure->columns = [
             'save_id' => ['type' => self::UINT, 'autoIncrement' => true],
-            'name' => ['type' => self::STR,'maxLength' => 50,'required' => true]
+            'name' => ['type' => self::STR,'maxLength' => 50,'required' => true],
+            'icon_url' => ['type' => self::STR,'maxLength' => 999],
         ];
 
         $structure->getters = [
@@ -41,9 +42,13 @@ class MasterySave extends Entity implements iTraitCommon {
             'textboxrow' => [
                 'name' => 'name',
                 'value'=> $this->name,
-                'label'=> "Name"
-
-            ]
+                'label'=> "Name",
+            ],
+            'icon_url' => [
+                'name' => 'icon_url',
+                'value' => $this->icon_url,
+                'label' => 'Icon URL',
+            ],
         ];
 
         return $returnValue;
