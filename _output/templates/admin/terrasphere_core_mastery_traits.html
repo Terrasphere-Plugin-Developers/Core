@@ -1,79 +1,49 @@
-<xf:title>{{ phrase('terrasphere_core_mastery_traits') }}</xf:title>
+<xf:title>{{ phrase('Traits') }}</xf:title>
 
+<xf:pageaction>
+	<xf:button class="menuTrigger" data-xf-click="menu" aria-expanded="false" aria-haspopup="true">{{ phrase('Add trait...') }}</xf:button>
+	<div class="menu" data-menu="menu" aria-hidden="true">
+		<div class="menu-content">
+			<h3 class="menu-header">{{ phrase('Add Trait...') }}</h3>
 
+			<xf:foreach loop="$traitTypes" key="$traitTypeId" value="$traitType">
+				<a href="{{ link('terrasphere-core/masteries/traits/add', null, {'type': $traitTypeId})}}"  class="menu-linkRow">{$traitTypeId}</a>
+			</xf:foreach>
+		</div>
+	</div>
+</xf:pageaction>
 
 <div class="block">
 	<div class="block-container">
-		
-		<h2 class="block-header">
-			{{ phrase('terrasphere_core_mastery_type') }}
-			<xf:button href="{{ link('terrasphere-core/masteries/traits/mastery-type/add') }}" icon="add" style="float: right;">{{ phrase('add') }}</xf:button>
+		<h2 class="block-tabHeader tabs hScroller" data-xf-init="tabs h-scroller" data-state="replace" role="tablist">
+			<span class="hScroller-scroll">
+			<xf:foreach loop="$traitTypes" key="$traitTypeId" value="$traitType">
+				<a class="tabs-tab"
+				   role="tab"
+				   tabindex="0"
+				   aria-controls="trait-{$traitTypeId}"
+				   id="{$traitTypeId}">{$traitTypeId}</a>
+			</xf:foreach>
+			</span>
 		</h2>
-		<div class="block-body">
-			<xf:datalist>
-				<xf:foreach loop="$specialTypes" value="$specialType">
-					<xf:if is="$specialType.mastery_type_id != 1">
-						<xf:datarow>
-							<xf:main hash="{$specialType.mastery_type_id}"
-									 href="{{ link('terrasphere-core/masteries/traits/mastery-type/edit', $specialType) }}"
-									 label="{$specialType.name}">
-							</xf:main>
-						</xf:datarow>
-					</xf:if>
-				</xf:foreach>
-			</xf:datalist>
-		</div>
-		
-		<h2 class="block-header">
-			{{ phrase('terrasphere_core_role') }}
-			<xf:button href="{{ link('terrasphere-core/masteries/traits/role/add') }}" icon="add" style="float: right;">{{ phrase('add') }}</xf:button>
-		</h2>
-		<div class="block-body">
-			<xf:datalist>
-				<xf:foreach loop="$roles" value="$role">
-					<xf:datarow>
-						<xf:main hash="{$role.role_id}"
-								 href="{{ link('terrasphere-core/masteries/traits/role/edit', $role) }}"
-								 label="{$role.name}">
-						</xf:main>
-					</xf:datarow>
-				</xf:foreach>
-			</xf:datalist>
-		</div>
-		
-		<h2 class="block-header">
-			{{ phrase('terrasphere_core_save') }}
-			<xf:button href="{{ link('terrasphere-core/masteries/traits/save/add') }}" icon="add" style="float: right;">{{ phrase('add') }}</xf:button>
-		</h2>
-		<div class="block-body">
-			<xf:datalist>
-				<xf:foreach loop="$saves" value="$save">
-					<xf:datarow>
-						<xf:main hash="{$save.save_id}"
-								 href="{{ link('terrasphere-core/masteries/traits/save/edit', $save) }}"
-								 label="{$save.name}">
-						</xf:main>
-					</xf:datarow>
-				</xf:foreach>
-			</xf:datalist>
-		</div>
-		
-		<h2 class="block-header">
-			{{ phrase('terrasphere_core_expertise') }}
-			<xf:button href="{{ link('terrasphere-core/masteries/traits/expertise/add') }}" icon="add" style="float: right;">{{ phrase('add') }}</xf:button>
-		</h2>
-		<div class="block-body">
-			<xf:datalist>
-				<xf:foreach loop="$expertises" value="$expertise">
-					<xf:datarow>
-						<xf:main hash="{$expertise.expertise_id}"
-								 href="{{ link('terrasphere-core/masteries/traits/expertise/edit', $expertise) }}"
-								 label="{$expertise.name}">
-						</xf:main>
-					</xf:datarow>
-				</xf:foreach>
-			</xf:datalist>
-		</div>
-		
+
+		<ul class="tabPanes">
+			<xf:foreach loop="$traitTypes" key="$traitTypeId" value="$traitType">
+				<li class="block-body"
+					role="tabpanel" id="trait-{$traitTypeId}">
+						<xf:datalist>
+							<xf:foreach loop="$traitType" value="$type">
+								<xf:datarow
+										hash="{$type.id}"
+										href="{{ link('terrasphere-core/masteries/traits/edit', $type, {'traitCategory' : $type.entityHelperName})}}"
+										label="{$type.name}"
+										hint=""
+										delete="www.google.de"
+										dir="auto"/>
+							</xf:foreach>
+						</xf:datalist>
+				</li>
+			</xf:foreach>
+		</ul>
 	</div>
 </div>

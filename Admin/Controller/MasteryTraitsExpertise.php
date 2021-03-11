@@ -41,7 +41,7 @@ class MasteryTraitsExpertise extends AbstractController
         if ($params->expertise_id)
             $expertise = $this->assertRecordExists('Terrasphere\Core:MasteryExpertise', $params->expertise_id);
         else
-            $expertise = $this->em()->create('Terrasphere\Core:MasteryExpertise');
+            $expertise = $this->em()->create('Terrasphere\Core:MasterOhyExpertise');
 
         $this->save($expertise)->run();
 

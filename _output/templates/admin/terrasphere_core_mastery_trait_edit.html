@@ -1,0 +1,23 @@
+<xf:if is="$trait.isInsert()">
+	<xf:title>{{ phrase('Add new trait') }}</xf:title>
+<xf:else />
+	<xf:title>{{ phrase('edit') }} ({$trait.name})</xf:title>
+</xf:if>
+
+
+<xf:form action="{{ link('terrasphere-core/masteries/traits/dumb', $trait,{'traitCategory' : $trait.entityHelperName}) }}" class="block" ajax="true">
+    <div class="block-container">
+        <div class="block-body">
+
+            <xf:foreach loop="$trait.formStructure" key="$structureKey" value="$xfElement">
+				<xf:if is="{$structureKey} == 'textboxrow'">
+					<xf:textboxrow
+					name="{$xfElement.name}"
+					value="{$xfElement.value}"
+					label="{$xfElement.label}"/>
+				</xf:if>										  
+			</xf:foreach>
+        </div>
+		<xf:submitrow sticky="true" icon="save" />
+    </div>
+</xf:form>
