@@ -70,8 +70,8 @@ class Masteries extends AbstractController
             'save_id' => 'uint',
             'expertise_id' => 'uint',
 
-            //'icon_url' => 'str',
-            //'thumbnail_url' => 'str',
+            'icon_url' => 'str',
+            'thumbnail_url' => 'str',
         ]);
 
         $form->basicEntitySave($mastery, $input);

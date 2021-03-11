@@ -35,6 +35,24 @@
 					<xf:option value="{$expertiseType.expertise_id}">{$expertiseType.name}</xf:option>
 				</xf:foreach>
 			</xf:selectrow>
+			
+			<xf:formrow label="Icon Image" hint="Full-sized image">
+				<div class="inputGroup inputGroup--joined" data-xf-init="asset-upload" data-asset="{{'Mastery-icon_url-' . $mastery.mastery_id}}">
+					<input type="text" class="input js-assetPath " name="icon_url" value="{{$mastery.icon_url}}" dir="ltr" id="stilldontknowwhythisexists">
+					<label class="inputGroup-text inputUploadButton" data-xf-init="tooltip" data-original-title="Upload file" id="stilldontknowwhythisexistseither">
+						<input type="file" class="js-uploadAsset" accept=".gif,.jpeg,.jpg,.jpe,.png">
+					</label>
+				</div>
+			</xf:formrow>
+			
+			<xf:formrow label="Thumbnail Image" hint="Smaller image ~64x64">
+				<div class="inputGroup inputGroup--joined" data-xf-init="asset-upload" data-asset="{{'Mastery-thumbnail_url-' . $mastery.mastery_id}}">
+					<input type="text" class="input js-assetPath " name="thumbnail_url" value="{{$mastery.thumbnail_url}}" dir="ltr" id="stilldontknowwhythisexists">
+					<label class="inputGroup-text inputUploadButton" data-xf-init="tooltip" data-original-title="Upload file" id="stilldontknowwhythisexistseither">
+						<input type="file" class="js-uploadAsset" accept=".gif,.jpeg,.jpg,.jpe,.png">
+					</label>
+				</div>
+			</xf:formrow>
 		</div>
 		<xf:submitrow sticky="true" icon="save" />
 	</div>

@@ -19,7 +19,7 @@
 				
 				<xf:if is="{$structureKey} == 'icon_url'">
 					<xf:formrow label="{{ phrase('icon') }}">
-						<div class="inputGroup inputGroup--joined" data-xf-init="asset-upload" data-asset="{{$trait.entityHelperName . '-' . $structureKey . '-' . $trait.name}}">
+						<div class="inputGroup inputGroup--joined" data-xf-init="asset-upload" data-asset="{{$trait.entityHelperName . '-' . $structureKey . '-' . $trait.getID()}}">
 							<input type="text" class="input js-assetPath " name="icon_url" value="{{$trait.icon_url}}" dir="ltr" id="idkwhythisneedsanid">
 							<label class="inputGroup-text inputUploadButton" data-xf-init="tooltip" data-original-title="Upload file" id="idkwhythisneedsanideither">
 								<input type="file" class="js-uploadAsset" accept=".gif,.jpeg,.jpg,.jpe,.png">
