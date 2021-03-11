@@ -11,7 +11,6 @@ class MasteryTraits extends AbstractController
 {
     public function actionIndex(): View
     {
-
         $masteryType = $this->finder('Terrasphere\Core:MasteryType')->fetch();
         $masteryRole = $this->finder('Terrasphere\Core:MasteryRole')->fetch();
         $masterySave = $this->finder('Terrasphere\Core:MasterySave')->fetch();
@@ -21,7 +20,12 @@ class MasteryTraits extends AbstractController
         //currently the add-mastery stuff is populated by the names of this, and the names corrospond with the proper shortNames
         //so please don't change them to plural until you(or I) found out how one can access an array in the html templates by index without
         //having to write a loop
-        $traitTypes = ["Save" => $masterySave, "Expertise" => $masteryExpertise,"Type" => $masteryType, "Role" => $masteryRole];
+        $traitTypes = [
+            "Type" => $masteryType,
+            "Role" => $masteryRole,
+            "Save" => $masterySave,
+            "Expertise" => $masteryExpertise
+        ];
         $viewParams = [
             'traitTypes' => $traitTypes,
         ];
@@ -31,8 +35,6 @@ class MasteryTraits extends AbstractController
 
     public function actionAddOrEdit(Array $params): View
     {
-
-
         return $this->view('Terrasphere\Core:Mastery\Traits\Edit', 'terrasphere_core_mastery_trait_edit', $params);
     }
 
@@ -61,7 +63,8 @@ class MasteryTraits extends AbstractController
 
 
     //It's called dumb because for some reason the save route doesn't work
-    public function actionDumb(ParameterBag $params){
+    public function actionDumb(ParameterBag $params): \XF\Mvc\Reply\Redirect
+    {
         $this->assertPostOnly();
         $category = $this->filter("traitCategory","string");
         $entityShortName = "Terrasphere\Core:".$category;
@@ -73,7 +76,7 @@ class MasteryTraits extends AbstractController
 
         $this->save($trait)->run();
 
-        return $this->actionIndex();
+        return $this->redirect($this->buildLink('terrasphere-core/masteries/traits'));
     }
 
 

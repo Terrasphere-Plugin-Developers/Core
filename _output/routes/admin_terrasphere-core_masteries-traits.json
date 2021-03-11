@@ -2,7 +2,7 @@
     "route_type": "admin",
     "route_prefix": "terrasphere-core",
     "sub_name": "masteries/traits",
-    "format": ":int<id>",
+    "format": "masteries/traits/:int<id>",
     "build_class": "",
     "build_method": "",
     "controller": "Terrasphere\\Core:MasteryTraits",
