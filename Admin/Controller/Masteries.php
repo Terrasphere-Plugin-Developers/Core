@@ -5,6 +5,7 @@ namespace Terrasphere\Core\Admin\Controller;
 use Terrasphere\Core\Entity\Mastery;
 use XF\Admin\Controller\AbstractController;
 use XF\Mvc\ParameterBag;
+use XF\Mvc\Reply\View;
 
 class Masteries extends AbstractController
 {
@@ -14,9 +15,16 @@ class Masteries extends AbstractController
      *
      * @return \XF\Mvc\Reply\Redirect
      */
-    public function actionIndex(): \XF\Mvc\Reply\Redirect
+    public function actionIndex(): View
     {
-        return $this->redirect($this->buildLink('terrasphere-core/masteries/mastery-list'));
+        $viewParams = [];
+
+        /** @var \Terrasphere\Core\Repository\Mastery $masteryRepo */
+        $masteryRepo = $this->repository('Terrasphere\Core:Mastery');
+
+        $viewParams['masteryGroups'] = $masteryRepo->getMasteryListGroupedByClassification();
+
+        return $this->view('Terrasphere\Core:Mastery', 'terrasphere_core_mastery_list', $viewParams);
     }
 
     public function actionAddOrEdit(Mastery $mastery): \XF\Mvc\Reply\View
@@ -55,7 +63,7 @@ class Masteries extends AbstractController
 
         $this->save($mastery)->run();
 
-        return $this->actionIndex();
+        return $this->redirect($this->buildLink('terrasphere-core/masteries'));
     }
 
     public function save(Mastery $mastery): \XF\Mvc\FormAction
