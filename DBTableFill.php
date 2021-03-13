@@ -47,9 +47,11 @@ trait DBTableFill
         $setup->db()->insertBulk('xf_terrasphere_core_mastery_type',
             [
                 ["name" => 'DEFAULT',
-                    "cap_per_character" => 9999],
+                    "cap_per_character" => 9999,
+                    "system_type" => 1],
                 ["name" => 'Alter',
-                    "cap_per_character" => 1]
+                    "cap_per_character" => 1,
+                    "system_type" => 0]
             ]);
     }
 

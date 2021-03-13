@@ -58,6 +58,8 @@ trait DBTableInit
                 $table->addColumn("mastery_type_id","int")->autoIncrement();
                 $table->addColumn("name","varchar",50)->setDefault('');
                 $table->addColumn("cap_per_character","int")->setDefault(9999);
+                $table->addColumn("icon_url","varchar",999)->setDefault('');
+                $table->addColumn("system_type","tinyint")->setDefault('0'); //boolean
             }
         );
     }

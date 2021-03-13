@@ -16,7 +16,9 @@ class MasteryType extends Entity implements iTraitCommon
         $structure->columns = [
             'mastery_type_id' => ['type' => self::UINT, 'autoIncrement' => true],
             'name' => ['type' => self::STR,'maxLength' => 50,'required' => true],
-            'cap_per_character' => ['type' => self::UINT, 'default' => 9999]
+            'cap_per_character' => ['type' => self::UINT, 'default' => 9999],
+            'icon_url' => ['type' => self::STR,'maxLength' => 999],
+            'system_type' => ['type' => ENTITY::BOOL, 'default' => false]
         ];
 
         $structure->getters = [
@@ -48,7 +50,12 @@ class MasteryType extends Entity implements iTraitCommon
                 'value'=> $this->name,
                 'label'=> "Name"
 
-            ]
+            ],
+            'icon_url' => [
+                'name' => 'icon_url',
+                'value' => $this->icon_url,
+                'label' => 'Icon URL',
+            ],
         ];
 
         return $returnValue;
