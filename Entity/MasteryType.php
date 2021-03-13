@@ -49,7 +49,6 @@ class MasteryType extends Entity implements iTraitCommon
                 'name' => 'name',
                 'value'=> $this->name,
                 'label'=> "Name",
-                'explain' => "Moo"
             ],
             ['xfComponent' => 'icon_url', //should be something different
                 'name' => 'icon_url',
