@@ -35,7 +35,7 @@
 							<xf:foreach loop="$traitType" value="$type">
 								<xf:datarow
 										hash="{$type.id}"
-										href="{{ link('terrasphere-core/masteries/traits/edit', $type, {'traitCategory' : $type.entityHelperName})}}"
+										href="{{ link('terrasphere-core/masteries/traits/edit', $type, {'traitCategory' : $type.entityShortName})}}"
 										label="{$type.name}"
 										hint=""
 										delete="www.google.de"

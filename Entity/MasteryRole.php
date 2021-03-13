@@ -20,7 +20,7 @@ class MasteryRole extends Entity implements iTraitCommon {
 
         $structure->getters = [
             'id' => true,
-            'entityHelperName' => true,
+            'entityShortName' => true,
             'formStructure' => true
         ];
 

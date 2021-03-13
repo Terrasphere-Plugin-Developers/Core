@@ -41,7 +41,7 @@ class MasteryTraits extends AbstractController
     public function actionAdd(ParameterBag $params): View
     {
         $type = $this->filter('type','str');
-        $newTrait = $this->em()->create('Terrasphere\Core:Mastery'.$type);
+        $newTrait = $this->em()->create($type);
         $viewParams = [
             'trait' => $newTrait
         ];
