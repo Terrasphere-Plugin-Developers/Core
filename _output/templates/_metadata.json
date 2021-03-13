@@ -1,9 +1,4 @@
 {
-    "admin/terrasphere_core_expertise_edit.html": {
-        "version_id": 1000010,
-        "version_string": "1.0.0 Alpha",
-        "hash": "1c747acd3b47c2064e3cf870335d5649"
-    },
     "admin/terrasphere_core_mastery_edit.html": {
         "version_id": 1000010,
         "version_string": "1.0.0 Alpha",
@@ -23,21 +18,6 @@
         "version_id": 1000010,
         "version_string": "1.0.0 Alpha",
         "hash": "1227837707ba2290c7903dba2755411c"
-    },
-    "admin/terrasphere_core_mastery_type_edit.html": {
-        "version_id": 1000010,
-        "version_string": "1.0.0 Alpha",
-        "hash": "44b180cbc7b982e84696411a38f24a97"
-    },
-    "admin/terrasphere_core_role_edit.html": {
-        "version_id": 1000010,
-        "version_string": "1.0.0 Alpha",
-        "hash": "6e77860adea1321daf591192dfc00457"
-    },
-    "admin/terrasphere_core_save_edit.html": {
-        "version_id": 1000010,
-        "version_string": "1.0.0 Alpha",
-        "hash": "149d211ff9ad610936bf03a8d579fff3"
     },
     "public/terrasphere_core_mastery_save_edit.html": {
         "version_id": 1000010,
