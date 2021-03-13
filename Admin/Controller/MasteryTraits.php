@@ -52,7 +52,7 @@ class MasteryTraits extends AbstractController
     public function actionEdit(ParameterBag $params): \XF\Mvc\Reply\View
     {
         $category = $this->filter("traitCategory","string");
-        $trait = $this->assertRecordExists('Terrasphere\Core:'.$category, $params->id);
+        $trait = $this->assertRecordExists($category, $params->id);
 
         $viewParams = [
             'trait' => $trait
@@ -67,7 +67,7 @@ class MasteryTraits extends AbstractController
     {
         $this->assertPostOnly();
         $category = $this->filter("traitCategory","string");
-        $entityShortName = "Terrasphere\Core:".$category;
+        $entityShortName = $category;
 
        if ($params->id)
             $trait = $this->assertRecordExists($entityShortName, $params->id);

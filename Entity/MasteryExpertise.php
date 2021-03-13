@@ -34,10 +34,9 @@ class MasteryExpertise extends Entity implements iTraitCommon
         return $this->expertise_id;
     }
 
-    public function getEntityHelperName(): string
+    public function getEntityShortName(): string
     {
-        $secondBit = explode(":",$this->structure()->shortName);
-        return $secondBit[1];
+        return $this->structure()->shortName;
     }
 
     public function getFormStructure() : array{

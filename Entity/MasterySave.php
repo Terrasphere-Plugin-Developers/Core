@@ -31,7 +31,7 @@ class MasterySave extends Entity implements iTraitCommon {
         return $this->save_id;
     }
 
-    public function getEntityHelperName(): string
+    public function getEntityShortName(): string
     {
         $secondBit = explode(":",$this->structure()->shortName);
         return $secondBit[1];

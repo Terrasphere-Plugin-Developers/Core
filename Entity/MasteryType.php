@@ -37,10 +37,9 @@ class MasteryType extends Entity implements iTraitCommon
         return $this->mastery_type_id;
     }
 
-    public function getEntityHelperName(): string
+    public function getEntityShortName(): string
     {
-        $secondBit = explode(":",$this->structure()->shortName);
-        return $secondBit[1];
+        return $this->structure()->shortName;
     }
 
     public function getFormStructure(): array

@@ -33,10 +33,9 @@ class MasteryRole extends Entity implements iTraitCommon {
 
     }
 
-    public function getEntityHelperName(): string
+    public function getEntityShortName(): string
     {
-        $secondBit = explode(":",$this->structure()->shortName);
-        return $secondBit[1];
+        return $this->structure()->shortName;
     }
 
     public function getFormStructure() : array{
