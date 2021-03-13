@@ -48,10 +48,12 @@ trait DBTableFill
             [
                 ["name" => 'DEFAULT',
                     "cap_per_character" => 9999,
-                    "system_type" => 1],
+                    "system_type" => 1,
+                    "cost_modifier" => 1],
                 ["name" => 'Alter',
                     "cap_per_character" => 1,
-                    "system_type" => 0]
+                    "system_type" => 0,
+                    "cost_modifier" => 1.5]
             ]);
     }
 

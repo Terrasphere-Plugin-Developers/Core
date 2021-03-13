@@ -10,15 +10,16 @@
         <div class="block-body">
             <xf:foreach loop="$trait.formStructure" key="$structureKey" value="$xfElement">
 				
-				<xf:if is="{$structureKey} == 'textboxrow'">
+				<xf:if is="{$xfElement.xfComponent} == 'textboxrow'">
 					<xf:textboxrow
 					name="{$xfElement.name}"
 					value="{$xfElement.value}"
-					label="{$xfElement.label}"/>
+					label="{$xfElement.label}"
+					explain="{$xfElement.explain}"/>
 				</xf:if>
 				
-				<xf:if is="{$structureKey} == 'icon_url'">
-					<xf:formrow label="{{ phrase('icon') }}">
+				<xf:if is="{$xfElement.xfComponent}== 'icon_url'">
+					<xf:formrow label="{$xfElement.label}">
 						<div class="inputGroup inputGroup--joined" data-xf-init="asset-upload" data-asset="{{$trait.entityHelperName . '-' . $structureKey . '-' . $trait.getID()}}">
 							<input type="text" class="input js-assetPath " name="icon_url" value="{{$trait.icon_url}}" dir="ltr" id="idkwhythisneedsanid">
 							<label class="inputGroup-text inputUploadButton" data-xf-init="tooltip" data-original-title="Upload file" id="idkwhythisneedsanideither">
@@ -27,7 +28,12 @@
 						</div>
 					</xf:formrow>
 				</xf:if>
-				
+
+				<xf:if is="{$xfElement.xfComponent} == 'numberboxrow'">
+					<xf:numberboxrow name="{$xfElement.name}" value="{$xfElement.value}" min="$xfElement.min" max="$xfElement.max" step="$xfElement.step"
+									 label="{$xfElement.label}"
+									 explain="{$xfElement.explain}" />
+				</xf:if>
 			</xf:foreach>
         </div>
 		<xf:submitrow sticky="true" icon="save" />

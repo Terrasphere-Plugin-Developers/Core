@@ -60,6 +60,7 @@ trait DBTableInit
                 $table->addColumn("cap_per_character","int")->setDefault(9999);
                 $table->addColumn("icon_url","varchar",999)->setDefault('');
                 $table->addColumn("system_type","tinyint")->setDefault('0'); //boolean
+                $table->addColumn('cost_modifier',"float")->setDefault('1');
             }
         );
     }

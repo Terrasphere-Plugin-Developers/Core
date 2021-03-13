@@ -42,16 +42,16 @@ class MasteryExpertise extends Entity implements iTraitCommon
 
     public function getFormStructure() : array{
         $returnValue = [
-            'textboxrow' => [
+            ['xfComponent' => 'textboxrow',
                 'name' => 'name',
                 'value'=> $this->name,
                 'label'=> "Name",
             ],
-            'icon_url' => [
+            ['xfComponent' => 'icon_url', //should be something different
                 'name' => 'icon_url',
                 'value' => $this->icon_url,
                 'label' => 'Icon URL',
-            ],
+            ]
         ];
 
         return $returnValue;
