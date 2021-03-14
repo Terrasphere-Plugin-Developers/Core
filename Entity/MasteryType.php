@@ -42,36 +42,5 @@ class MasteryType extends Entity implements iTraitCommon
         return $this->structure()->shortName;
     }
 
-    public function getFormStructure(): array
-    {
-        $returnValue = [
-            ['xfComponent' => 'textboxrow',
-                'name' => 'name',
-                'value'=> $this->name,
-                'label'=> "Name",
-            ],
-            ['xfComponent' => 'icon_url', //should be something different
-                'name' => 'icon_url',
-                'value' => $this->icon_url,
-                'label' => 'Icon URL',
-            ],
-            ['xfComponent' => 'numberboxrow',
-                'name' => 'cap_per_character',
-                'value'=> $this->cap_per_character,
-                'label'=> "Maximum per Character",
-                'min' => 1,
-                'max' => 9999,
-                'step' => 0.1,
-                'explain' => "The maximum of this special type of mastery a character can have at one time."
-            ],
-            ['xfComponent' => 'textboxrow',
-            'name' => 'cost_modifier',
-            'value'=> $this->cost_modifier,
-            'label'=> "Cost Modifier",
-            'explain' => "The modifier to the rank-up cost of masteries of this type. Numbers only!"
-        ],
-        ];
 
-        return $returnValue;
-    }
 }

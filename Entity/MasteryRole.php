@@ -38,20 +38,4 @@ class MasteryRole extends Entity implements iTraitCommon {
         return $this->structure()->shortName;
     }
 
-    public function getFormStructure() : array{
-        $returnValue = [
-            ['xfComponent' => 'textboxrow',
-                'name' => 'name',
-                'value'=> $this->name,
-                'label'=> "Name",
-            ],
-            ['xfComponent' => 'icon_url', //should be something different
-                'name' => 'icon_url',
-                'value' => $this->icon_url,
-                'label' => 'Icon URL',
-            ]
-        ];
-
-        return $returnValue;
-    }
 }

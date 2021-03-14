@@ -3,7 +3,9 @@
 namespace Terrasphere\Core\Admin\Controller;
 
 use Terrasphere\Core\Entity\MasteryExpertise;
+use Terrasphere\Core\Entity\MasteryType;
 use XF\Admin\Controller\AbstractController;
+use XF\Mvc\Entity\Structure;
 use XF\Mvc\ParameterBag;
 use XF\Mvc\Reply\View;
 
@@ -26,6 +28,7 @@ class MasteryTraits extends AbstractController
             "Save" => $masterySave,
             "Expertise" => $masteryExpertise
         ];
+
         $viewParams = [
             'traitTypes' => $traitTypes,
         ];
@@ -33,20 +36,31 @@ class MasteryTraits extends AbstractController
         return $this->view('Terrasphere\Core:Mastery\Traits', 'terrasphere_core_mastery_traits', $viewParams);
     }
 
-    public function actionAddOrEdit(Array $params): View
+    public function actionAddOrEdit($trait): View
     {
-        return $this->view('Terrasphere\Core:Mastery\Traits\Edit', 'terrasphere_core_mastery_trait_edit', $params);
+
+        $shortName = $trait->entityShortName;
+        $templateName = "terrasphere_core_mastery_trait_basic_edit";
+
+
+        //Redirect to proper template depending on what type of trait it is
+        //TODO: find a better way to compare the shortName - some sort of get_class, or a static thing getShortName...?
+        if($shortName == "Terrasphere\Core:MasteryType"){
+            $templateName = "terrasphere_core_mastery_trait_type_edit";
+        }
+        $viewParams = [
+            'trait' => $trait
+        ];
+
+        return $this->view('Terrasphere\Core:Mastery\Traits\Edit', $templateName, $viewParams);
     }
 
     public function actionAdd(ParameterBag $params): View
     {
         $type = $this->filter('type','str');
         $newTrait = $this->em()->create($type);
-        $viewParams = [
-            'trait' => $newTrait
-        ];
 
-        return $this->actionAddOrEdit($viewParams);
+        return $this->actionAddOrEdit($newTrait);
     }
 
     public function actionEdit(ParameterBag $params): \XF\Mvc\Reply\View
@@ -54,10 +68,7 @@ class MasteryTraits extends AbstractController
         $category = $this->filter("traitCategory","string");
         $trait = $this->assertRecordExists($category, $params->id);
 
-        $viewParams = [
-            'trait' => $trait
-        ];
-        return $this->actionAddOrEdit($viewParams);
+        return $this->actionAddOrEdit($trait);
     }
 
 

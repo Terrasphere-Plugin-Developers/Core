@@ -9,10 +9,20 @@
         "version_string": "1.0.0 Alpha",
         "hash": "9308d46136bb247bdd3da3b9c7c5b468"
     },
+    "admin/terrasphere_core_mastery_trait_basic_edit.html": {
+        "version_id": 1000010,
+        "version_string": "1.0.0 Alpha",
+        "hash": "d9dc93f93814fd5d3d79b572f0e7024f"
+    },
     "admin/terrasphere_core_mastery_trait_edit.html": {
         "version_id": 1000010,
         "version_string": "1.0.0 Alpha",
         "hash": "e8b9b5dc9b54788672ced0eaab6796de"
+    },
+    "admin/terrasphere_core_mastery_trait_type_edit.html": {
+        "version_id": 1000010,
+        "version_string": "1.0.0 Alpha",
+        "hash": "7529a4d6e39fb6b0a31fdfe12867bb40"
     },
     "admin/terrasphere_core_mastery_traits.html": {
         "version_id": 1000010,
