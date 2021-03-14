@@ -7,14 +7,17 @@ use Terrasphere\Core\Entity\MasteryExpertise;
 trait DBTableFill
 {
 
-    protected  function fillMasteryEnumTables(Setup $setup) : void{
+    protected function fillMasteryEnumTables(Setup $setup): void
+    {
         $this->populateMasteryExpertiseTable($setup);
         $this->populateMasterySaveTable($setup);
         $this->populateMasteryTypeTable($setup);
         $this->populateMasteryRoleTable($setup);
+        $this->populateRankingTables($setup);
     }
 
-    private function populateMasteryExpertiseTable(Setup $setup) : void{
+    private function populateMasteryExpertiseTable(Setup $setup): void
+    {
         $setup->db()->insertBulk('xf_terrasphere_core_mastery_expertise',
             [
                 ["name" => 'Knack'],
@@ -25,7 +28,8 @@ trait DBTableFill
             ]);
     }
 
-    private function populateMasterySaveTable(Setup $setup) : void{
+    private function populateMasterySaveTable(Setup $setup): void
+    {
         $setup->db()->insertBulk('xf_terrasphere_core_mastery_save',
             [
                 ["name" => 'Will'],
@@ -34,7 +38,8 @@ trait DBTableFill
             ]);
     }
 
-    private function populateMasteryRoleTable(Setup $setup) : void{
+    private function populateMasteryRoleTable(Setup $setup): void
+    {
         $setup->db()->insertBulk('xf_terrasphere_core_mastery_role',
             [
                 ["name" => 'Defense'],
@@ -43,7 +48,8 @@ trait DBTableFill
             ]);
     }
 
-    private function populateMasteryTypeTable(Setup $setup) : void{
+    private function populateMasteryTypeTable(Setup $setup): void
+    {
         $setup->db()->insertBulk('xf_terrasphere_core_mastery_type',
             [
                 ["name" => 'DEFAULT',
@@ -55,6 +61,18 @@ trait DBTableFill
                     "system_type" => 0,
                     "cost_modifier" => 1.5]
             ]);
+    }
+
+    private function populateRankingTables(Setup $setup): void
+    {
+       /* $setup->db()->insertBulk("xf_terrasphere_core_rank",
+            [
+                ["name" => 'D'],
+                ["name" => 'C'],
+                ["name" => 'B'],
+                ["name" => 'A'],
+                ["name" => 'S']]
+        );*/
     }
 
 }

@@ -16,6 +16,7 @@ trait DBTableInit
         $this->masteryTypeTable($sm);
 
         $this->masteryTable($sm);
+        $this->rankTables($sm);
 
         // etc...
     }
@@ -29,7 +30,9 @@ trait DBTableInit
         $sm->dropTable("xf_terrasphere_core_mastery_type");
 
         $sm->dropTable("xf_terrasphere_core_mastery");
-
+        $sm->dropTable("xf_terrasphere_core_rank");
+        $sm->dropTable("xf_terrasphere_core_rank_schema");
+        $sm->dropTable("xf_terrasphere_core_rank_schema_binding");
         // etc...
     }
 
@@ -65,6 +68,37 @@ trait DBTableInit
         );
     }
 
+    private function rankTables(SchemaManager $sm)
+    {
+        $sm->createTable(
+            "xf_terrasphere_core_rank", function (create $table)
+        {
+            $table->addColumn("rank_id","int")->autoIncrement();
+            $table->addColumn("name","varchar",50)->setDefault('');
+            $table->addColumn("next_rank","int")->unsigned(false)->setDefault(-1);
+        }
+        );
+
+        $sm->createTable(
+            "xf_terrasphere_core_rank_schema", function (create $table)
+        {
+            $table->addColumn("rank_schema_id","int")->autoIncrement();
+            $table->addColumn("name","varchar",50)->setDefault('');
+            $table->addColumn("currency_type","int");
+        }
+        );
+
+        $sm->createTable(
+            "xf_terrasphere_core_rank_schema_binding", function (create $table)
+        {
+            $table->addColumn("rank_id","int");
+            $table->addColumn("rank_schema_id","int");
+            $table->addColumn('cost',"int");
+            $table->addPrimaryKey(['rank_id','rank_schema_id']);
+        }
+        );
+    }
+
     private function masteryTable(SchemaManager $sm)
     {
         $sm->createTable(
@@ -80,4 +114,6 @@ trait DBTableInit
             }
         );
     }
+
+
 }
