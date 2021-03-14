@@ -11,6 +11,8 @@ use XF\Mvc\Reply\View;
 
 class MasteryTraits extends AbstractController
 {
+    //TODO: find a better way to compare the shortName - some sort of get_class, or a static thing getShortName...?
+    private $typeShortName = "Terrasphere\Core:MasteryType";
     public function actionIndex(): View
     {
         $masteryType = $this->finder('Terrasphere\Core:MasteryType')->where('system_type',false)->fetch();
@@ -44,8 +46,7 @@ class MasteryTraits extends AbstractController
 
 
         //Redirect to proper template depending on what type of trait it is
-        //TODO: find a better way to compare the shortName - some sort of get_class, or a static thing getShortName...?
-        if($shortName == "Terrasphere\Core:MasteryType"){
+        if($shortName == $this->typeShortName){
             $templateName = "terrasphere_core_mastery_trait_type_edit";
         }
         $viewParams = [
@@ -58,7 +59,7 @@ class MasteryTraits extends AbstractController
     public function actionAdd(ParameterBag $params): View
     {
         $type = $this->filter('type','str');
-        $newTrait = $this->em()->create($type);
+        $newTrait = $this->em()->create("Terrasphere\Core:Mastery".$type);
 
         return $this->actionAddOrEdit($newTrait);
     }
@@ -85,18 +86,23 @@ class MasteryTraits extends AbstractController
         else
             $trait = $this->em()->create($entityShortName);
 
-        $this->save($trait)->run();
+        //Type has different values than the other traits, so different save functions
+        if($entityShortName == $this->typeShortName){
+            $this->saveTypeTrait($trait)->run();
+        }else{
+            $this->saveBaseTrait($trait)->run();
+        }
+
 
         return $this->redirect($this->buildLink('terrasphere-core/masteries/traits'));
     }
-
 
     protected function getRouteRepo()
     {
         return $this->repository('XF:Route');
     }
 
-    public function save($expertise): \XF\Mvc\FormAction
+    public function saveBaseTrait($trait): \XF\Mvc\FormAction
     {
         $form = $this->formAction();
 
@@ -106,7 +112,22 @@ class MasteryTraits extends AbstractController
             //'thumbnail_url' => 'str',
         ]);
 
-        $form->basicEntitySave($expertise, $input);
+        $form->basicEntitySave($trait, $input);
+
+        return $form;
+    }
+
+    public function saveTypeTrait($trait): \XF\Mvc\FormAction
+    {
+        $form = $this->formAction();
+
+        $input = $this->filter([
+            'name' => 'str',
+            'icon_url' => 'str',
+            'cap_per_character' => 'uint',
+        ]);
+
+        $form->basicEntitySave($trait, $input);
 
         return $form;
     }
