@@ -11,12 +11,12 @@
 			<div class="block-body">
 				<xf:datalist>
 					<xf:foreach loop="{$masteryGroup.masteries}" value="$mastery">
-						<xf:datarow>
-							<xf:main hash="{$mastery.mastery_id}"
-									 href="{{ link('terrasphere-core/masteries/edit', $mastery) }}"
-									 label="{$mastery.display_name}">
-							</xf:main>
-						</xf:datarow>
+						<xf:datarow
+								hash="{$mastery.mastery_id}"
+								href="{{ link('terrasphere-core/masteries/edit', $mastery) }}"
+								label="{$mastery.display_name}"
+								delete="todo"
+								/>
 					</xf:foreach>
 				</xf:datalist>
 			</div>
