@@ -20,6 +20,7 @@ trait DBTableFill
     {
         $setup->db()->insertBulk('xf_terrasphere_core_mastery_expertise',
             [
+                ['name' => 'Nothing'],
                 ["name" => 'Knack'],
                 ["name" => 'Fitness'],
                 ["name" => 'Awareness'],
@@ -32,6 +33,7 @@ trait DBTableFill
     {
         $setup->db()->insertBulk('xf_terrasphere_core_mastery_save',
             [
+                ['name' => 'Nothing'],
                 ["name" => 'Will'],
                 ["name" => 'Fortitude'],
                 ["name" => 'Reflex'],
