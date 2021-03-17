@@ -83,6 +83,12 @@
         "version_string": "1.0.0 Alpha",
         "hash": "4f88b4b014e15e5b47e78bde4c4edc41"
     },
+    "terrasphere_core_add_rank_schema.txt": {
+        "global_cache": false,
+        "version_id": 1000010,
+        "version_string": "1.0.0 Alpha",
+        "hash": "1732a4d08226a9bdffeacf5154db7bf2"
+    },
     "terrasphere_core_expertise.txt": {
         "global_cache": false,
         "version_id": 1000010,
@@ -124,6 +130,12 @@
         "version_id": 1000010,
         "version_string": "1.0.0 Alpha",
         "hash": "52df35858b59009bd55181b57c7d79bf"
+    },
+    "terrasphere_core_rank_schema.txt": {
+        "global_cache": false,
+        "version_id": 1000010,
+        "version_string": "1.0.0 Alpha",
+        "hash": "e70807963c34920fefd1d441eb16a6e3"
     },
     "terrasphere_core_role.txt": {
         "global_cache": false,

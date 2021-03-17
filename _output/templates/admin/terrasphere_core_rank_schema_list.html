@@ -1,1 +1,22 @@
-Moo;
+<xf:title>{{ phrase('terrasphere_core_rank_schema') }}</xf:title>
+
+<xf:pageaction>
+    <xf:button href="{{ link('terrasphere-core/rank-schemas/add') }}" icon="add">{{ phrase('add') }}</xf:button>
+</xf:pageaction>
+
+<div class="block">
+    <div class="block-container">
+            <div class="block-body">
+                <xf:datalist>
+                    <xf:foreach loop="$rankSchemas" value="$rankSchema">
+                        <xf:datarow
+                                hash="{$rankSchema.rank_schema_id}"
+                                href="{{ link('terrasphere-core/rank-schemas/edit', $rankSchema) }}"
+                                label="{$rankSchema.name}"
+                                delete="{{ link('terrasphere-core/rank-schemas/delete', $rankSchema) }}"
+                        />
+                    </xf:foreach>
+                </xf:datalist>
+            </div>
+    </div>
+</div>
