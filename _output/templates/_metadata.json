@@ -29,6 +29,11 @@
         "version_string": "1.0.0 Alpha",
         "hash": "de84e92c4a2b628bd842101335507fcf"
     },
+    "admin/terrasphere_core_rank_schema_list.html": {
+        "version_id": 1000010,
+        "version_string": "1.0.0 Alpha",
+        "hash": "ae15912c8a0dc335eb83b8e4ac8b4bd6"
+    },
     "public/terrasphere_core_mastery_save_edit.html": {
         "version_id": 1000010,
         "version_string": "1.0.0 Alpha",

@@ -1,7 +1,7 @@
 {
-    "parent_navigation_id": "TerrasphereCoreMasteries",
-    "display_order": 60,
-    "link": "terrasphere-core/masteries/ranks",
+    "parent_navigation_id": "terrasphereCore",
+    "display_order": 200,
+    "link": "terrasphere-core/rank-schemas",
     "icon": "",
     "admin_permission_id": "terrasphereCore",
     "debug_only": false,
