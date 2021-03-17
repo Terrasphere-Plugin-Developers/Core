@@ -13,6 +13,7 @@ class RankSchema extends Entity{
 
         $structure->columns = [
             'rank_schema_id' => ['type' => self::UINT, 'autoIncrement' => true],
+            'name' => ['type' => self::STR, 'maxLength' => 50, 'required' => true],
             'rank_d' => ['type' => self::UINT],
             'rank_c' => ['type' => self::UINT],
             'rank_b' => ['type' => self::UINT],

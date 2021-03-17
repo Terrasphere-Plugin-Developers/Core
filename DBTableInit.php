@@ -72,6 +72,7 @@ trait DBTableInit
             "xf_terrasphere_core_rank_schema", function (create $table)
         {
             $table->addColumn("rank_schema_id","int")->autoIncrement();
+            $table->addColumn('name','varchar',50)->setDefault('');
             $table->addColumn("rank_d","int");
             $table->addColumn("rank_c","int");
             $table->addColumn("rank_b","int");
