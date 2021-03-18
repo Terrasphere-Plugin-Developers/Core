@@ -1,0 +1,13 @@
+<xf:macro name="character_sheet_modal_button"
+		  arg-user="!">
+	<a href="{{ link('members/charactersheet', $user, {}) }}"
+	   data-xf-click="overlay"
+	   class="button"
+	   style="
+			width: 90%;
+    		white-space: pre-wrap;
+    		margin: 4px auto;
+    		padding: 2px 4px 2px 4px;">
+		<span>Character Sheet</span>
+	</a>
+</xf:macro>
