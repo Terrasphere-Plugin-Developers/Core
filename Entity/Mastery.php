@@ -29,7 +29,7 @@ class Mastery extends Entity
             'MasteryExpertise' => [
                 'entity' => 'Terrasphere\Core:MasteryExpertise',
                 'type' => SELF::TO_ONE,
-                'conditions' => 'save_id',
+                'conditions' => 'expertise_id',
                 'primary' => true //TODO: Does this mean its the primary key of the other table?
             ],
             'MasteryRole' => [

@@ -25,7 +25,7 @@ class Mastery extends Repository
         // Get normal-type masteries.
         $queryResults = $this
             ->finder('Terrasphere\Core:Mastery')
-            ->with(["MasteryType", "MasteryRole"])
+            ->with(["MasteryType", "MasteryRole", "MasteryExpertise", "MasterySave"])
             ->where('mastery_type_id', 1)
             ->order('role_id', 'ASC')
             ->fetch();
@@ -52,7 +52,7 @@ class Mastery extends Repository
         // Get non-normal-type masteries.
         $queryResults = $this
             ->finder('Terrasphere\Core:Mastery')
-            ->with(["MasteryType", "MasteryRole"])
+            ->with(["MasteryType", "MasteryRole", "MasteryExpertise", "MasterySave"])
             ->where('mastery_type_id', '!=', 1)
             ->order('role_id', 'ASC')
             ->order('mastery_type_id', 'ASC')
