@@ -81,4 +81,29 @@ class Mastery extends Repository
 
         return $masteryGroups;
     }
+
+    /**
+     * @param int $masteryID
+     * @return \Terrasphere\Core\Entity\Mastery || null
+     */
+    public function getMasteryByID(int $masteryID)
+    {
+        return $this
+            ->finder('Terrasphere\Core:Mastery')
+            ->where('mastery_id', $masteryID)
+            ->fetchOne();
+    }
+
+    /**
+     * @param int $masteryID
+     * @return \Terrasphere\Core\Entity\Mastery
+     */
+    public function getMasteryWithTraitsByID(int $masteryID): \Terrasphere\Core\Entity\Mastery
+    {
+        return $this
+        ->finder('Terrasphere\Core:Mastery')
+        ->with(["MasteryType", "MasteryRole", "MasteryExpertise", "MasterySave"])
+        ->where('mastery_id', $masteryID)
+        ->fetchOne();
+    }
 }
