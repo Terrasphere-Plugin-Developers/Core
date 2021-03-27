@@ -4,7 +4,8 @@ namespace Terrasphere\Core\Entity;
 use XF\Mvc\Entity\Entity;
 use XF\Mvc\Entity\Structure;
 
-class RankSchema extends Entity{
+class RankSchema extends Entity
+{
     public static function getStructure(Structure $structure) : Structure
     {
         $structure->table = 'xf_terrasphere_core_rank_schema';
@@ -27,9 +28,9 @@ class RankSchema extends Entity{
                 'entity' => 'DBTech\Credits:Currency',
                 'type' => SELF::TO_ONE,
                 'conditions' => 'currency_type',
-                'primary' => true //TODO: Does this mean its the primary key of the other table?
-            ]];
+                'primary' => true
+            ]
+        ];
         return  $structure;
     }
-
 }

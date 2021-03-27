@@ -17,6 +17,7 @@ trait DBTableInit
 
         $this->masteryTable($sm);
         $this->rankTable($sm);
+        $this->rankSchemaTable($sm);
 
         // etc...
     }
@@ -30,6 +31,7 @@ trait DBTableInit
         $sm->dropTable("xf_terrasphere_core_mastery_type");
 
         $sm->dropTable("xf_terrasphere_core_mastery");
+        $sm->dropTable("xf_terrasphere_core_rank");
         $sm->dropTable("xf_terrasphere_core_rank_schema");
         // etc...
     }
@@ -62,6 +64,7 @@ trait DBTableInit
                 $table->addColumn("icon_url","varchar",999)->setDefault('');
                 $table->addColumn("system_type","tinyint")->setDefault('0'); //boolean
                 $table->addColumn('cost_modifier',"float")->setDefault('1');
+                $table->addColumn('rank_schema_id',"int")->setDefault('1');
             }
         );
     }
@@ -69,17 +72,32 @@ trait DBTableInit
     private function rankTable(SchemaManager $sm)
     {
         $sm->createTable(
+            "xf_terrasphere_core_rank", function (create $table)
+            {
+                $table->addColumn("rank_id","int")->autoIncrement();
+                $table->addColumn('name','varchar', 10);
+                $table->addColumn('color','varchar', 20);
+                $table->addColumn('tier','int');
+                $table->addColumn("cost","int");
+                $table->addColumn("currency_id","int");
+            }
+        );
+    }
+
+    private function rankSchemaTable(SchemaManager $sm)
+    {
+        $sm->createTable(
             "xf_terrasphere_core_rank_schema", function (create $table)
-        {
-            $table->addColumn("rank_schema_id","int")->autoIncrement();
-            $table->addColumn('name','varchar',50)->setDefault('');
-            $table->addColumn("rank_d","int");
-            $table->addColumn("rank_c","int");
-            $table->addColumn("rank_b","int");
-            $table->addColumn("rank_a","int");
-            $table->addColumn("rank_s","int");
-            $table->addColumn("currency_type","int");
-        }
+            {
+                $table->addColumn("rank_schema_id","int")->autoIncrement();
+                $table->addColumn('name','varchar',50)->setDefault('');
+                $table->addColumn("rank_d","int");
+                $table->addColumn("rank_c","int");
+                $table->addColumn("rank_b","int");
+                $table->addColumn("rank_a","int");
+                $table->addColumn("rank_s","int");
+                $table->addColumn("currency_type","int");
+            }
         );
     }
 

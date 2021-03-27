@@ -67,14 +67,6 @@ trait DBTableFill
 
     private function populateRankingTables(Setup $setup): void
     {
-       /* $setup->db()->insertBulk("xf_terrasphere_core_rank",
-            [
-                ["name" => 'D'],
-                ["name" => 'C'],
-                ["name" => 'B'],
-                ["name" => 'A'],
-                ["name" => 'S']]
-        );*/
-    }
 
+    }
 }
