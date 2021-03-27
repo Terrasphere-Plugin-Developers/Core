@@ -47,6 +47,36 @@
         "version_string": "1.0.0 Alpha",
         "hash": "c4eac418c3bedff78c22ec8bd854d3c3"
     },
+    "option.terrasphereCoreRankAColor.txt": {
+        "global_cache": false,
+        "version_id": 1000010,
+        "version_string": "1.0.0 Alpha",
+        "hash": "647eaf643c1b3e631ed791529d7f1c34"
+    },
+    "option.terrasphereCoreRankBColor.txt": {
+        "global_cache": false,
+        "version_id": 1000010,
+        "version_string": "1.0.0 Alpha",
+        "hash": "658815d8338d4a3ca58f90e48c3924f8"
+    },
+    "option.terrasphereCoreRankCColor.txt": {
+        "global_cache": false,
+        "version_id": 1000010,
+        "version_string": "1.0.0 Alpha",
+        "hash": "1996f4d79b7d2085542e9c2c9124a0ba"
+    },
+    "option.terrasphereCoreRankDColor.txt": {
+        "global_cache": false,
+        "version_id": 1000010,
+        "version_string": "1.0.0 Alpha",
+        "hash": "0781c7e06588df46035303567375c021"
+    },
+    "option.terrasphereCoreRankSColor.txt": {
+        "global_cache": false,
+        "version_id": 1000010,
+        "version_string": "1.0.0 Alpha",
+        "hash": "b94b0c0adba8cf25a3c280902f49d953"
+    },
     "option_explain.terrasphereCoreGPCurrency.txt": {
         "global_cache": false,
         "version_id": 1000010,
@@ -58,6 +88,36 @@
         "version_id": 1000010,
         "version_string": "1.0.0 Alpha",
         "hash": "3557c97ad2796a3fb620dba24e37b797"
+    },
+    "option_explain.terrasphereCoreRankAColor.txt": {
+        "global_cache": false,
+        "version_id": 1000010,
+        "version_string": "1.0.0 Alpha",
+        "hash": "06f18bb2ab28ae16efb5a7f4dafc073c"
+    },
+    "option_explain.terrasphereCoreRankBColor.txt": {
+        "global_cache": false,
+        "version_id": 1000010,
+        "version_string": "1.0.0 Alpha",
+        "hash": "c3ee0cfdd34ddfa1146465586b2cdfab"
+    },
+    "option_explain.terrasphereCoreRankCColor.txt": {
+        "global_cache": false,
+        "version_id": 1000010,
+        "version_string": "1.0.0 Alpha",
+        "hash": "f45e3a6c0b008904c3ea77ea593934cc"
+    },
+    "option_explain.terrasphereCoreRankDColor.txt": {
+        "global_cache": false,
+        "version_id": 1000010,
+        "version_string": "1.0.0 Alpha",
+        "hash": "42e0d37688e5c90a29b35d5299ff46c9"
+    },
+    "option_explain.terrasphereCoreRankSColor.txt": {
+        "global_cache": false,
+        "version_id": 1000010,
+        "version_string": "1.0.0 Alpha",
+        "hash": "0a6588f9a0be0deee2c6adb89929ac11"
     },
     "option_group.terrasphereCore.txt": {
         "global_cache": false,
