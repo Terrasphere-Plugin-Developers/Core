@@ -25,7 +25,7 @@
                              max="99999" step="1"
                              label="{{ phrase('Cost for S Rank') }}"/>
 
-            <xf:selectrow name="currency_type" value="{$rankSchema.currency_type}" label="{{ phrase('dbtech_credits_currency') }}">
+            <xf:selectrow name="currency_type" value="{$rankSchema.currency_id}" label="{{ phrase('dbtech_credits_currency') }}">
                 <xf:foreach loop="$currencies" value="$currency">
                     <xf:option value="{$currency.currency_id}">{$currency.title}</xf:option>
                 </xf:foreach>
