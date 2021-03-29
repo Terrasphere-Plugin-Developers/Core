@@ -67,6 +67,27 @@ trait DBTableFill
 
     private function populateRankingTables(Setup $setup): void
     {
-
+        //TODO Change the name blu with actuaL values
+        $setup->db()->insertBulk('xf_terrasphere_core_rank',
+        [
+            ["name" => "E",
+                "color" => "blu",
+                "tier" => 1],
+            ["name" => "D",
+                "color" => "blu",
+                "tier" => 2],
+            ["name" => "C",
+                "color" => "blu",
+                "tier" => 3],
+            ["name" => "B",
+                "color" => "blu",
+                "tier" => 4],
+            ["name" => "A",
+                "color" => "blu",
+                "tier" => 5],
+            ["name" => "S",
+                "color" => "blu",
+                "tier" => 6]
+        ]);
     }
 }

@@ -5,6 +5,7 @@ namespace Terrasphere\Core\Admin\Controller;
 
 
 use Terrasphere\Core\Entity\RankSchema;
+use XF\Mvc\Entity\Entity;
 use XF\Mvc\FormAction;
 use XF\Mvc\ParameterBag;
 use XF\Mvc\Reply\Redirect;
@@ -24,8 +25,38 @@ class RankSchemas extends \XF\Admin\Controller\AbstractController
 
     public function actionAddOrEdit(RankSchema $rankSchema): View
     {
+
+        //find the rankSchemaMap associated with the rankSchema if there are any
+        $rankSchemaMap = $this->finder("Terrasphere\Core:RankSchemaMap")->where('rank_schema_id', $rankSchema->rank_schema_id)->fetch();
+
+        //load all ranks we have
+        $ranks = $this->finder("Terrasphere\Core:Rank")->fetch();
+
+        //empty array to push values into
+        $paramThing = [];
+
+        ///for each rank in ranks we check if the ID is already present in the rankSchemaMap (that has been pre-filtered with the rankSchemaID)
+        /// if an entry exists, we use that cost
+        /// if it doesn't, we use 0 as a cost
+        foreach ($ranks as $rank) {
+            $cost = 0;
+            foreach ($rankSchemaMap as $schema) {
+                if ($rank->rank_id == $schema->rank_id) $cost = $schema->cost;
+            }
+
+            //Pre-format the rank information we need to populate the loop field
+            //TODO: Maybe a repo is better, but we don't use this anywhere else
+            array_push($paramThing, [
+                'rank_id' => $rank->rank_id,
+                'schema_id' => $rankSchema->rank_schema_id,
+                'rank_name' => $rank->name,
+                'cost' => $cost
+            ]);
+        }
+
         $viewParams = [
             "rankSchema" => $rankSchema,
+            "rankParams" => $paramThing,
             "currencies" => $this->finder("DBTech\Credits:Currency")->fetch()
         ];
 
@@ -44,22 +75,44 @@ class RankSchemas extends \XF\Admin\Controller\AbstractController
         return $this->actionAddOrEdit($rankSchema);
     }
 
-    public function actionSave(ParameterBag $params) : Redirect{
+    public function actionSave(ParameterBag $params): Redirect
+    {
         $this->assertPostOnly();
 
-        if($params->rank_schema_id)
-            $rankSchema = $this->assertRecordExists("Terrasphere\Core:RankSchema",$params->rank_schema_id);
+        ///---------------------
+        /// Save the rankSchema
+        /// --------------------
+        if ($params->rank_schema_id)
+            $rankSchema = $this->assertRecordExists("Terrasphere\Core:RankSchema", $params->rank_schema_id);
         else
             $rankSchema = $this->em()->create("Terrasphere\Core:RankSchema");
 
-        $this->save($rankSchema)->run();
+        $this->saveSchema($rankSchema)->run();
+
+        ///---------------------
+        /// Save the rankSchemaMap
+        /// --------------------
+        $ranks = $this->finder("Terrasphere\Core:Rank")->fetch();
+
+        //loop through every rank to save an entry in the rank SchemaMap
+        //todo better way to bulk save stuff...?
+        foreach ($ranks as $rank) {
+            $rankSchemaMapRecord = $this->finder("Terrasphere\Core:RankSchemaMap")->where('rank_schema_id', $rankSchema->rank_schema_id)->where('rank_id',$rank->rank_id)->fetchOne();
+            //todo assertRecord exists throws an alternate route to go to if it doesn't exist, but in this case what would be better is
+            if($rankSchemaMapRecord)
+                $rankSchemaMap = $this->assertRecordExists("Terrasphere\Core:RankSchemaMap",[$params->rank_schema_id,$rank->rank_id]);
+            else
+                $rankSchemaMap = $this->em()->create("Terrasphere\Core:RankSchemaMap");
+
+            $this->saveMaping($rankSchemaMap, $rank->rank_id,$rankSchema->rank_schema_id)->run();
+        }
 
         return $this->redirect($this->buildLink('terrasphere-core/rank-schemas'));
     }
+
     public function actionDelete(ParameterBag $params)
     {
-        $rankSchema = $this->assertRecordExists("Terrasphere\Core:RankSchema",$params->rank_schema_id);
-
+        $rankSchema = $this->assertRecordExists("Terrasphere\Core:RankSchema", $params->rank_schema_id);
         /** @var \XF\ControllerPlugin\Delete $plugin */
         $plugin = $this->plugin('XF:Delete');
         return $plugin->actionDelete(
@@ -71,22 +124,35 @@ class RankSchemas extends \XF\Admin\Controller\AbstractController
         );
     }
 
-    public function save(RankSchema $rankSchema):FormAction{
+    private function saveSchema(RankSchema $rankSchema): FormAction
+    {
         $form = $this->formAction();
 
         $input = $this->filter([
             'name' => 'str',
-            'rank_d' => 'uint',
-            'rank_c' => 'uint',
-            'rank_b' => 'uint',
-            'rank_a' => 'uint',
-            'rank_s' => 'uint',
-            'currency_type' => 'uint'
+            'currency_id' => 'uint'
         ]);
 
-        $form->basicEntitySave($rankSchema,$input);
+        $form->basicEntitySave($rankSchema, $input);
 
         return $form;
+    }
+
+    private function saveMaping($rankSchemaMap, $rank_id,$rank_schema_id): FormAction
+    {
+        $form = $this->formAction();
+
+        $cost = $this->filter($rank_id, 'uint');
+        $input = [
+            'rank_id' => $rank_id,
+            'rank_schema_id' => $rank_schema_id,
+            'cost' => $cost
+        ];
+
+        $form->basicEntitySave($rankSchemaMap,$input);
+
+        return $form;
+
     }
 
 }

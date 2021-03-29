@@ -9,23 +9,11 @@
         <div class="block-body">
             <xf:textboxrow name="name" value="{$rankSchema.name}"
                            label="{{ phrase('name') }}" />
-            <xf:numberboxrow name="rank_d" value="{$rankSchema.rank_d}" min="0"
-                             max="99999" step="1"
-                             label="{{ phrase('Cost for D Rank') }}"/>
-            <xf:numberboxrow name="rank_c" value="{$rankSchema.rank_c}" min="0"
-                             max="99999" step="1"
-                             label="{{ phrase('Cost for C Rank') }}"/>
-            <xf:numberboxrow name="rank_b" value="{$rankSchema.rank_b}" min="0"
-                             max="99999" step="1"
-                             label="{{ phrase('Cost for B Rank') }}"/>
-            <xf:numberboxrow name="rank_a" value="{$rankSchema.rank_a}" min="0"
-                             max="99999" step="1"
-                             label="{{ phrase('Cost for A Rank') }}"/>
-            <xf:numberboxrow name="rank_s" value="{$rankSchema.rank_s}" min="0"
-                             max="99999" step="1"
-                             label="{{ phrase('Cost for S Rank') }}"/>
-
-            <xf:selectrow name="currency_type" value="{$rankSchema.currency_id}" label="{{ phrase('dbtech_credits_currency') }}">
+            <xf:foreach loop="$rankParams" value="$rank">
+                <xf:numberboxrow name="{$rank.rank_id}" value="{$rank.cost}"
+                                 label="Cost for {$rank.rank_name}" min="0" max="99999" step="1" />
+            </xf:foreach>
+            <xf:selectrow name="currency_id" value="{$rankSchema.currency_id}" label="{{ phrase('dbtech_credits_currency') }}">
                 <xf:foreach loop="$currencies" value="$currency">
                     <xf:option value="{$currency.currency_id}">{$currency.title}</xf:option>
                 </xf:foreach>
