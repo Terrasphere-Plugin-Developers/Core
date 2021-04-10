@@ -2,12 +2,10 @@
 
 namespace Terrasphere\Core;
 
-use Terrasphere\Core\Entity\MasteryExpertise;
-
 trait DBTableFill
 {
 
-    protected function fillMasteryEnumTables(Setup $setup): void
+    protected function fillMasteryEnumTables(Setup $setup)
     {
         $this->populateMasteryExpertiseTable($setup);
         $this->populateMasterySaveTable($setup);
@@ -16,7 +14,7 @@ trait DBTableFill
         $this->populateRankingTables($setup);
     }
 
-    private function populateMasteryExpertiseTable(Setup $setup): void
+    private function populateMasteryExpertiseTable(Setup $setup)
     {
         $setup->db()->insertBulk('xf_terrasphere_core_mastery_expertise',
             [
@@ -29,7 +27,7 @@ trait DBTableFill
             ]);
     }
 
-    private function populateMasterySaveTable(Setup $setup): void
+    private function populateMasterySaveTable(Setup $setup)
     {
         $setup->db()->insertBulk('xf_terrasphere_core_mastery_save',
             [
@@ -40,7 +38,7 @@ trait DBTableFill
             ]);
     }
 
-    private function populateMasteryRoleTable(Setup $setup): void
+    private function populateMasteryRoleTable(Setup $setup)
     {
         $setup->db()->insertBulk('xf_terrasphere_core_mastery_role',
             [
@@ -50,7 +48,7 @@ trait DBTableFill
             ]);
     }
 
-    private function populateMasteryTypeTable(Setup $setup): void
+    private function populateMasteryTypeTable(Setup $setup)
     {
         $setup->db()->insertBulk('xf_terrasphere_core_mastery_type',
             [
@@ -65,28 +63,27 @@ trait DBTableFill
             ]);
     }
 
-    private function populateRankingTables(Setup $setup): void
+    private function populateRankingTables(Setup $setup)
     {
-        //TODO Change the name blu with actuaL values
         $setup->db()->insertBulk('xf_terrasphere_core_rank',
         [
             ["name" => "E",
-                "color" => "blu",
+                "color" => "#777777",
                 "tier" => 1],
             ["name" => "D",
-                "color" => "blu",
+                "color" => "#4786c7",
                 "tier" => 2],
             ["name" => "C",
-                "color" => "blu",
+                "color" => "#41b4ae",
                 "tier" => 3],
             ["name" => "B",
-                "color" => "blu",
+                "color" => "#eabb0f",
                 "tier" => 4],
             ["name" => "A",
-                "color" => "blu",
+                "color" => "#bc2b3d",
                 "tier" => 5],
             ["name" => "S",
-                "color" => "blu",
+                "color" => "#d44499",
                 "tier" => 6]
         ]);
     }
