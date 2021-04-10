@@ -68,24 +68,30 @@ trait DBTableFill
     {
         $setup->db()->insertBulk('xf_terrasphere_core_rank',
         [
-            ["name" => "E",
+            ["rank_id" => 0,
+                "name" => "E",
                 "color" => "#777777",
-                "tier" => 1],
-            ["name" => "D",
+                "tier" => 0],
+            ["rank_id" => 1,
+                "name" => "D",
                 "color" => "#4786c7",
-                "tier" => 2],
-            ["name" => "C",
+                "tier" => 1],
+            ["rank_id" => 2,
+                "name" => "C",
                 "color" => "#41b4ae",
-                "tier" => 3],
-            ["name" => "B",
+                "tier" => 2],
+            ["rank_id" => 3,
+                "name" => "B",
                 "color" => "#eabb0f",
-                "tier" => 4],
-            ["name" => "A",
+                "tier" => 3],
+            ["rank_id" => 4,
+                "name" => "A",
                 "color" => "#bc2b3d",
-                "tier" => 5],
-            ["name" => "S",
+                "tier" => 4],
+            ["rank_id" => 5,
+                "name" => "S",
                 "color" => "#d44499",
-                "tier" => 6]
+                "tier" => 5]
         ]);
     }
 }
