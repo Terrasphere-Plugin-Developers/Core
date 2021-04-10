@@ -59,7 +59,8 @@ trait DBTableFill
                 ["name" => 'Alter',
                     "cap_per_character" => 1,
                     "system_type" => 0,
-                    "cost_modifier" => 1.5]
+                    "cost_modifier" => 1.5,
+                    'rank_schema_id' => 2]
             ]);
     }
 

@@ -32,10 +32,17 @@
                     </label>
                 </div>
             </xf:formrow>
-            <xf:numberboxrow name="cap_per_character" value="{$trait.cap_per_character}" min="1"
+            <xf:numberboxrow name="rank_schema_id" value="{$trait.rank_schema_id}" min="1"
                              max="9999" step="1"
                              label="{{ phrase('terrasphere_core_mastery_type_cap') }}"
                              explain="{{ phrase('terrasphere_core_mastery_type_cap_explain') }}"/>
+			<xf:selectrow name="rank_schema_id" value="{$trait.rank_schema_id}"
+						  label="Rank Cost Schema"
+						  explain="Which schema of costs for each rank to follow.">
+				<xf:foreach loop="$rankSchemas" value="$rankSchema">
+					<xf:option value="{$rankSchema.rank_schema_id}">{$rankSchema.name}</xf:option>
+				</xf:foreach>
+			</xf:selectrow>
 
         </div>
         <xf:submitrow sticky="true" icon="save"/>

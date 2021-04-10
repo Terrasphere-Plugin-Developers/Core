@@ -19,7 +19,8 @@ class MasteryType extends Entity implements iTraitCommon
             'cap_per_character' => ['type' => self::UINT, 'default' => 9999],
             'icon_url' => ['type' => self::STR,'maxLength' => 999],
             'system_type' => ['type' => ENTITY::BOOL, 'default' => false],
-            'cost_modifier' => ['type' => self::FLOAT, 'default' => 1.0]
+            'cost_modifier' => ['type' => self::FLOAT, 'default' => 1.0],
+            'rank_schema_id' => ['type' => self::UINT, 'default' => 1]
         ];
 
         $structure->getters = [

@@ -50,7 +50,8 @@ class MasteryTraits extends AbstractController
             $templateName = "terrasphere_core_mastery_trait_type_edit";
         }
         $viewParams = [
-            'trait' => $trait
+            'trait' => $trait,
+            'rankSchemas' => $this->finder('Terrasphere\Core:RankSchema')->fetch(),
         ];
 
         return $this->view('Terrasphere\Core:Mastery\Traits\Edit', $templateName, $viewParams);
@@ -125,6 +126,7 @@ class MasteryTraits extends AbstractController
             'name' => 'str',
             'icon_url' => 'str',
             'cap_per_character' => 'uint',
+            'rank_schema_id' => 'uint',
         ]);
 
         $form->basicEntitySave($trait, $input);
