@@ -4,6 +4,7 @@ namespace Terrasphere\Core\Entity;
 
 use XF\Mvc\Entity\Entity;
 use XF\Mvc\Entity\Structure;
+use XF\Pub\Controller\AbstractController;
 
 class Rank extends Entity
 {
@@ -22,5 +23,19 @@ class Rank extends Entity
 
 
         return  $structure;
+    }
+
+    public static function maxTier(AbstractController $controller): int
+    {
+        return $controller->finder('Terrasphere\Core:Rank')
+            ->order('tier', 'DESC')
+            ->fetchOne()['tier'];
+    }
+
+    public static function maxRank(AbstractController $controller): Rank
+    {
+        return $controller->finder('Terrasphere\Core:Rank')
+            ->order('tier', 'DESC')
+            ->fetchOne();
     }
 }
