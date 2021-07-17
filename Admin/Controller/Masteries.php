@@ -80,6 +80,8 @@ class Masteries extends AbstractController
 
             'icon_url' => 'str',
             'thumbnail_url' => 'str',
+
+            'color' => 'str',
         ]);
 
         $form->basicEntitySave($mastery, $input);

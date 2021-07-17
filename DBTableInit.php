@@ -116,9 +116,8 @@ trait DBTableInit
             $table->addColumn("display_name", "varchar", 50)->setDefault('');;
             $table->addColumn("icon_url", "varchar", 999)->setDefault('');
             $table->addColumn("thumbnail_url", "varchar", 999)->setDefault('');
+            $table->addColumn("color", "varchar", 10)->setDefault('#FFFFFFFF');
         }
         );
     }
-
-
 }

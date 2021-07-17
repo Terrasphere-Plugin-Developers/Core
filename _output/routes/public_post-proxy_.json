@@ -1,0 +1,11 @@
+{
+    "route_type": "public",
+    "route_prefix": "post-proxy",
+    "sub_name": "",
+    "format": ":int<post_id>/",
+    "build_class": "",
+    "build_method": "",
+    "controller": "Terrasphere\\Core:PostProxy",
+    "context": "",
+    "action_prefix": ""
+}

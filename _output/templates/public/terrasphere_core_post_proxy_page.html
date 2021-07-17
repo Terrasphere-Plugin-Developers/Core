@@ -1,0 +1,58 @@
+<xf:macro name="post"
+		arg-post="!"
+		arg-thread="!">
+
+	<xf:css src="message.less" />
+	
+	<xf:extension name="before"></xf:extension>
+
+	<xf:extension name="extra_classes" value="message--post" />
+	<article class="message {{ extension_value('extra_classes') }} js-post js-inlineModContainer {{ $post.isIgnored() ? 'is-ignored' : '' }} {{ $post.isUnread() ? ' is-unread' : '' }}"
+		data-author="{{ $post.User.username ?: $post.username }}"
+		data-content="post-{$post.post_id}"
+		id="js-post-{$post.post_id}">
+
+		<span class="u-anchorTarget" id="post-{$post.post_id}"></span>
+
+		<xf:extension name="full_body">
+			<div class="message-inner">
+
+				<xf:extension name="main_cell">
+					<div class="message-cell message-cell--main">
+					<xf:extension name="main_cell_inner">
+						<div class="message-main js-quickEditTarget">
+
+							<div class="message-content js-messageContent">
+							<xf:extension name="content">
+
+								<xf:extension name="notices">
+									<xf:macro name="post_macros::post_notices" arg-post="{$post}" arg-thread="{$thread}" />
+								</xf:extension>
+
+								<xf:extension name="user_content">
+									<xf:macro name="post_macros::post_user_content" arg-post="{$post}" arg-thread="{$thread}" />
+								</xf:extension>
+
+							</xf:extension>
+							</div>
+						</div>
+
+					</xf:extension>
+					</div>
+				</xf:extension>
+			</div>
+		</xf:extension>
+	</article>
+
+	<xf:extension name="after"></xf:extension>
+</xf:macro>
+
+<div class="block" data-type="post" data-href="{{ link('inline-mod') }}">
+	<div class="block-container">
+		<div class="block-body">
+			<xf:macro name="post"
+					arg-post="{$post}"
+					arg-thread="{$thread}"/>
+		</div>
+	</div>
+</div>
