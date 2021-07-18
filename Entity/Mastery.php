@@ -21,6 +21,7 @@ class Mastery extends Entity
             'display_name' => ['type' => self::STR, 'required' => true],
             'icon_url' => ['type' => self::STR],
             'thumbnail_url' => ['type' => self::STR],
+            'wiki_url' => ['type' => self::STR],
             'color' => ['type' => self::STR]
         ];
 

@@ -80,6 +80,7 @@ class Masteries extends AbstractController
 
             'icon_url' => 'str',
             'thumbnail_url' => 'str',
+            'wiki_url' => 'str',
 
             'color' => 'str',
         ]);

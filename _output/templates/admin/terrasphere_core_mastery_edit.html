@@ -35,6 +35,9 @@
 					<xf:option value="{$expertiseType.expertise_id}">{$expertiseType.name}</xf:option>
 				</xf:foreach>
 			</xf:selectrow>
+
+			<xf:textboxrow name="wiki_url" value="{$mastery.wiki_url}"
+						   label="{{ phrase('wiki_url') }}" />
 			
 			<xf:formrow label="Icon Image" hint="Full-sized image">
 				<div class="inputGroup inputGroup--joined" data-xf-init="asset-upload" data-asset="{{'Mastery-icon_url-' . $mastery.mastery_id}}">
