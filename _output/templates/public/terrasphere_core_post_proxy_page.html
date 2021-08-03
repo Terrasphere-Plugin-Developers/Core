@@ -1,3 +1,44 @@
+<xf:macro name="post_user_content_no_attach" arg-post="!" arg-thread="!" arg-snippet="{{ false }}" arg-displayAds="{{ true }}">
+
+	<div class="message-userContent lbContainer js-lbContainer {{ $post.isIgnored() ? 'is-ignored' : '' }}"
+		data-lb-id="post-{$post.post_id}"
+		data-lb-caption-desc="{{ $post.User ? $post.User.username : $post.username }} &middot; {{ date_time($post.post_date) }}">
+
+		<xf:if is="$post.isFirstPost()">
+			<xf:macro template="custom_fields_macros" name="custom_fields_view"
+				arg-type="threads"
+				arg-group="before"
+				arg-onlyInclude="{$thread.Forum.field_cache}"
+				arg-set="{$thread.custom_fields}"
+				arg-wrapperClass="message-fields message-fields--before" />
+		</xf:if>
+
+		<article class="message-body js-selectToQuote">
+			<xf:if is="$displayAds">
+				<xf:ad position="post_above_content" arg-post="{$post}" />
+			</xf:if>
+			<xf:if is="$snippet">
+				{{ bb_code_snippet($post.message, 'post', $post, $snippet) }}
+			<xf:else />
+				{{ bb_code($post.message, 'post', $post) }}
+			</xf:if>
+			<div class="js-selectToQuoteEnd">&nbsp;</div>
+			<xf:if is="$displayAds">
+				<xf:ad position="post_below_content" arg-post="{$post}" />
+			</xf:if>
+		</article>
+
+		<xf:if is="$post.isFirstPost()">
+			<xf:macro template="custom_fields_macros" name="custom_fields_view"
+				arg-type="threads"
+				arg-group="after"
+				arg-onlyInclude="{$thread.Forum.field_cache}"
+				arg-set="{$thread.custom_fields}"
+				arg-wrapperClass="message-fields message-fields--after" />
+		</xf:if>
+	</div>
+</xf:macro>
+
 <xf:macro name="post"
 		arg-post="!"
 		arg-thread="!">
@@ -30,7 +71,7 @@
 								</xf:extension>
 
 								<xf:extension name="user_content">
-									<xf:macro name="post_macros::post_user_content" arg-post="{$post}" arg-thread="{$thread}" />
+									<xf:macro name="post_user_content_no_attach" arg-post="{$post}" arg-thread="{$thread}" />
 								</xf:extension>
 
 							</xf:extension>
