@@ -35,12 +35,6 @@
         "version_string": "1.0.0 Alpha",
         "hash": "0e73db3d69388a619bf9502d24d8cec7"
     },
-    "api_scope.all.txt": {
-        "global_cache": false,
-        "version_id": 1000010,
-        "version_string": "1.0.0 Alpha",
-        "hash": "d41d8cd98f00b204e9800998ecf8427e"
-    },
     "option.terrasphereCoreGPCurrency.txt": {
         "global_cache": false,
         "version_id": 1000010,
