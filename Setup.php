@@ -39,7 +39,7 @@ class Setup extends AbstractSetup
 	    $this->uninstallTables($this->schemaManager());
     }
 
-    ### UPDATE STUFF ###
+    ### UPDATE STUFF  VERSION 1.0.1###
     public function upgrade1000100Step1(){
 	    $this->equipmentTable($this->schemaManager());
         $this->populateEquipStuff($this);
