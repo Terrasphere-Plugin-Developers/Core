@@ -31,11 +31,18 @@ class Setup extends AbstractSetup
         $this->fillMasteryEnumTables($this);
     }
 
+
+
     public function uninstallStep1()
     {
         // Drops all tables from the addon
 	    $this->uninstallTables($this->schemaManager());
     }
 
+    ### UPDATE STUFF ###
+    public function upgrade1000100Step1(){
+	    $this->equipmentTable($this->schemaManager());
+        $this->populateEquipStuff($this);
+    }
 
 }
