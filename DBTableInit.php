@@ -19,6 +19,7 @@ trait DBTableInit
         $this->rankTable($sm);
         $this->rankSchemaTable($sm);
         $this->rankSchemaMapTable($sm);
+        $this->equipmentTable($sm);
 
         // etc...
     }
@@ -35,6 +36,7 @@ trait DBTableInit
         $sm->dropTable("xf_terrasphere_core_rank");
         $sm->dropTable("xf_terrasphere_core_rank_schema");
         $sm->dropTable('xf_terrasphere_core_rank_schema_map');
+        $sm->dropTable('xf_terrasphere_core_equipment');
         // etc...
     }
 
@@ -113,11 +115,23 @@ trait DBTableInit
             $table->addColumn("role_id", "int");
             $table->addColumn("expertise_id", "int");
             $table->addColumn("mastery_type_id", "int");
-            $table->addColumn("display_name", "varchar", 50)->setDefault('');;
+            $table->addColumn("display_name", "varchar", 50)->setDefault('');
             $table->addColumn("icon_url", "varchar", 999)->setDefault('');
             $table->addColumn("thumbnail_url", "varchar", 999)->setDefault('');
             $table->addColumn("wiki_url","varchar",999)->setDefault('');
             $table->addColumn("color", "varchar", 10)->setDefault('#FFFFFFFF');
+        }
+        );
+    }
+
+    protected function equipmentTable(SchemaManager $sm){
+        $sm->createTable(
+            "xf_terrasphere_core_equipment", function (create $table) {
+                $table->addColumn('equipment_id', 'int')->autoIncrement();
+                $table->addColumn('display_name', 'varchar', 50)->setDefault('');
+                $table->addColumn('icon_url', 'varchar',999)->setDefault('');
+                $table->addColumn('equip_group', 'varchar', 50)->setDefault('');
+                $table->addColumn('rank_schema_id', 'int');
         }
         );
     }
