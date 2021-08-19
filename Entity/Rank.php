@@ -32,10 +32,25 @@ class Rank extends Entity
             ->fetchOne()['tier'];
     }
 
-    public static function maxRank(AbstractController $controller)
+    public static function maxRank(AbstractController $controller): Rank
     {
         return $controller->finder('Terrasphere\Core:Rank')
             ->order('tier', 'DESC')
             ->fetchOne();
     }
+
+    public static function  minRank(AbstractController  $controller): Rank
+    {
+        return $controller->finder('Terrasphere\Core:Rank')
+            ->order('tier','ASC')
+            ->fetchOne();
+    }
+
+    public function getNextRank():Rank
+    {
+        return $this->finder('Terrasphere\Core:Rank')
+            ->where('tier', ($this->tier)+1)
+            ->fetchOne();
+    }
+
 }
