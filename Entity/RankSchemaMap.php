@@ -21,13 +21,13 @@ class RankSchemaMap extends Entity
         $structure->relations = [
             "Rank" => [
                 'entity' => 'Terrasphere\Core:Rank',
-                'type' => SELF::TO_MANY,
+                'type' => SELF::TO_ONE,
                 'conditions' => "rank_id",
                 'primary' => true
              ],
             "RankSchema" => [
                 'entity' => 'Terrasphere\Core:RankSchema',
-                'type' => SELF::TO_MANY,
+                'type' => SELF::TO_ONE,
                 'conditions' => "rank_schema_id",
                 'primary' => true
             ]
