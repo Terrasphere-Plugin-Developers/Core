@@ -109,8 +109,8 @@ class MasteryTraits extends AbstractController
 
         $input = $this->filter([
             'name' => 'str',
-            'icon_url' => 'str',
-            //'thumbnail_url' => 'str',
+            'css_classes' => 'str',
+            'hex_color' => 'str',
         ]);
 
         $form->basicEntitySave($trait, $input);

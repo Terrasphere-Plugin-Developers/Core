@@ -17,7 +17,8 @@ class MasteryExpertise extends Entity implements iTraitCommon
         $structure->columns = [
             'expertise_id' => ['type' => self::UINT, 'autoIncrement' => true],
             'name' => ['type' => self::STR,'maxLength' => 50,'required' => true],
-            'icon_url' => ['type' => self::STR,'maxLength' => 999],
+            'css_classes' => ['type' => self::STR, "maxLength" => 999],
+            'hex_color' => ['type' => self::STR, "maxLength" => 7],
         ];
 
         $structure->getters = [

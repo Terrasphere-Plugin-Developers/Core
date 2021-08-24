@@ -51,7 +51,8 @@ trait DBTableInit
             "xf_terrasphere_core_mastery_" . $tableName, function (create $table) use ($tableName) {
             $table->addColumn($tableName . "_id", "int")->autoIncrement();
             $table->addColumn("name", "varchar", 50)->setDefault('');
-            $table->addColumn("icon_url", "varchar", 999)->setDefault('');
+            $table->addColumn("css_classes", "varchar", 999)->setDefault('');
+            $table->addColumn("hex_color", "varchar", 7)->setDefault('#fff');
         }
         );
     }

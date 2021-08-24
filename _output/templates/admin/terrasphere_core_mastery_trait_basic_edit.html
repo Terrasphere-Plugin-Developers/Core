@@ -15,23 +15,15 @@
                     name="name"
                     value="{$trait.name}"
                     label="{{ phrase('name') }}"/>
+            <xf:textboxrow
+                    name="css_classes"
+                    value="{$trait.css_classes}"
+                    label="{{ phrase('css') }}"/>
+            <xf:textboxrow
+                    name="hex_color"
+                    value="{$trait.hex_color}"
+                    label="{{ phrase('hex color') }}"/>
 
-            <xf:formrow label="{$xfElement.label}">
-                <xf:comment>
-                    data-asset needs to be changed to something better. That said, it basically takes the image name and
-                    data-asset makes a folder under asset with still the same filename, so in this case it would be
-                    under
-                    data/assets/placeholder/[imagename]
-                </xf:comment>
-                <div class="inputGroup inputGroup--joined" data-xf-init="asset-upload" data-asset="placeholder">
-                    <input type="text" class="input js-assetPath " name="icon_url" value="{$trait.icon_url}" dir="ltr"
-                           id="idkwhythisneedsanid">
-                    <label class="inputGroup-text inputUploadButton" data-xf-init="tooltip"
-                           data-original-title="Upload file" id="idkwhythisneedsanideither">
-                        <input type="file" class="js-uploadAsset" accept=".gif,.jpeg,.jpg,.jpe,.png">
-                    </label>
-                </div>
-            </xf:formrow>
 
         </div>
         <xf:submitrow sticky="true" icon="save"/>

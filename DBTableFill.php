@@ -19,12 +19,36 @@ trait DBTableFill
     {
         $setup->db()->insertBulk('xf_terrasphere_core_mastery_expertise',
             [
-                ['name' => 'Nothing'],
-                ["name" => 'Knack'],
-                ["name" => 'Fitness'],
-                ["name" => 'Awareness'],
-                ["name" => 'Knowledge'],
-                ["name" => 'Presence']
+                [
+                    'name' => 'Nothing',
+                    "css_classes" => "fas fa-bolt",
+                    "hex_color" => "#6436b1",
+                ],
+                [
+                    "name" => 'Knack',
+                    "css_classes" => "fas fa-hand-paper",
+                    "hex_color" => "#389c44",
+                ],
+                [
+                    "name" => 'Fitness',
+                    "css_classes" => "fas fa-running",
+                    "hex_color" => "#d02222",
+                ],
+                [
+                    "name" => 'Awareness',
+                    "css_classes" => "far fa-eye",
+                    "hex_color" => "#de6e47",
+                ],
+                [
+                    "name" => 'Knowledge',
+                    "css_classes" => "fas fa-books",
+                    "hex_color" => "#6e51cb",
+                ],
+                [
+                    "name" => 'Presence',
+                    "css_classes" => "fas fa-users-crown",
+                    "hex_color" => "#e2427b",
+                ]
             ]);
     }
 
@@ -32,10 +56,26 @@ trait DBTableFill
     {
         $setup->db()->insertBulk('xf_terrasphere_core_mastery_save',
             [
-                ['name' => 'Nothing'],
-                ["name" => 'Will'],
-                ["name" => 'Fortitude'],
-                ["name" => 'Reflex'],
+                [
+                    'name' => 'Nothing',
+                    "css_classes" => "fas fa-bolt",
+                    "hex_color" => "#6436b1",
+                ],
+                [
+                    "name" => 'Will',
+                    "css_classes" => "fas fa-head-side-brain",
+                    "hex_color" => "#9f5cce",
+                ],
+                [
+                    "name" => 'Fortitude',
+                    "css_classes" => "fas fa-heartbeat",
+                    "hex_color" => "#df6135",
+                ],
+                [
+                    "name" => 'Reflex',
+                    "css_classes" => "fad fa-shoe-prints",
+                    "hex_color" => "#68b435",
+                ],
             ]);
     }
 
@@ -43,9 +83,21 @@ trait DBTableFill
     {
         $setup->db()->insertBulk('xf_terrasphere_core_mastery_role',
             [
-                ["name" => 'Defense'],
-                ["name" => 'Offense'],
-                ["name" => 'Support'],
+                [
+                    "name" => 'Defense',
+                    "css_classes" => "far fa-shield-alt",
+                    "hex_color" => "#ce832c",
+                ],
+                [
+                    "name" => 'Offense',
+                    "css_classes" => "fas fa-swords",
+                    "hex_color" => "#ce2c2c",
+                ],
+                [
+                    "name" => 'Support',
+                    "css_classes" => "fas fa-hand-holding-medical",
+                    "hex_color" => "#67a3d8",
+                ],
             ]);
     }
 
