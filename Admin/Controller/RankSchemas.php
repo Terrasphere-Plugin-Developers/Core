@@ -114,13 +114,18 @@ class RankSchemas extends \XF\Admin\Controller\AbstractController
     {
         $rankSchema = $this->assertRecordExists("Terrasphere\Core:RankSchema", $params->rank_schema_id);
         /** @var \XF\ControllerPlugin\Delete $plugin */
+
+        $randEqui = $this->finder("Terrasphere\Core:Equipment")->fetchOne();
+        if($rankSchema->rank_schema_id == $randEqui->rank_schema_id){
+            return $this->error('Do not delete the Equipment Schema. For more help ask your local dev.');
+        }
         $plugin = $this->plugin('XF:Delete');
         return $plugin->actionDelete(
             $rankSchema,
             $this->buildLink('terrasphere-core/rank-schemas/delete', $rankSchema),
             $this->buildLink('terrasphere-core/rank-schemas/edit', $rankSchema),
             $this->buildLink('terrasphere-core/rank-schemas/'),
-            $rankSchema->display_name
+            $rankSchema->name
         );
     }
 
