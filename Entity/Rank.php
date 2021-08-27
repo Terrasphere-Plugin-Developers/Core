@@ -25,23 +25,23 @@ class Rank extends Entity
         return  $structure;
     }
 
-    public static function maxTier(AbstractController $controller): int
+    public static function maxTier($containsFinder): int
     {
-        return $controller->finder('Terrasphere\Core:Rank')
+        return $containsFinder->finder('Terrasphere\Core:Rank')
             ->order('tier', 'DESC')
             ->fetchOne()['tier'];
     }
 
-    public static function maxRank(AbstractController $controller): Rank
+    public static function maxRank($containsFinder): Rank
     {
-        return $controller->finder('Terrasphere\Core:Rank')
+        return $containsFinder->finder('Terrasphere\Core:Rank')
             ->order('tier', 'DESC')
             ->fetchOne();
     }
 
-    public static function  minRank(AbstractController  $controller): Rank
+    public static function minRank($containsFinder): Rank
     {
-        return $controller->finder('Terrasphere\Core:Rank')
+        return $containsFinder->finder('Terrasphere\Core:Rank')
             ->order('tier','ASC')
             ->fetchOne();
     }

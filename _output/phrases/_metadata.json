@@ -11,6 +11,12 @@
         "version_string": "1.0.0 Alpha",
         "hash": "e70807963c34920fefd1d441eb16a6e3"
     },
+    "admin_navigation.banner_buttons.txt": {
+        "global_cache": false,
+        "version_id": 1000200,
+        "version_string": "1.0.2",
+        "hash": "693f03f95017675d8d2478f26c89ecb0"
+    },
     "admin_navigation.terrasphereCore.txt": {
         "global_cache": false,
         "version_id": 1000010,

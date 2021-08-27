@@ -20,6 +20,7 @@ trait DBTableInit
         $this->rankSchemaTable($sm);
         $this->rankSchemaMapTable($sm);
         $this->equipmentTable($sm);
+        $this->bannerButtonTable($sm);
 
         // etc...
     }
@@ -37,6 +38,7 @@ trait DBTableInit
         $sm->dropTable("xf_terrasphere_core_rank_schema");
         $sm->dropTable('xf_terrasphere_core_rank_schema_map');
         $sm->dropTable('xf_terrasphere_core_equipment');
+        $sm->dropTable('xf_terrasphere_core_banner_button');
         // etc...
     }
 
@@ -134,6 +136,18 @@ trait DBTableInit
                 $table->addColumn('equip_group', 'varchar', 50)->setDefault('');
                 $table->addColumn('rank_schema_id', 'int');
         }
+        );
+    }
+
+    protected function bannerButtonTable(SchemaManager $sm) {
+        $sm->createTable(
+            "xf_terrasphere_core_banner_button", function (create $table) {
+                $table->addColumn('banner_button_id', 'int')->autoIncrement();
+                $table->addColumn('name', 'varchar', 300)->setDefault('');
+                $table->addColumn('icon_url', 'varchar',999)->setDefault('');
+                $table->addColumn('url', 'varchar',999)->setDefault('');
+                $table->addColumn('behavior', 'int')->setDefault(0);
+            }
         );
     }
 }

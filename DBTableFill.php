@@ -13,6 +13,7 @@ trait DBTableFill
         $this->populateMasteryRoleTable($setup);
         $this->populateRankingTables($setup);
         $this->populateEquipStuff($setup);
+        $this->populateBannerButtons($setup);
     }
 
     private function populateMasteryExpertiseTable(Setup $setup)
@@ -198,5 +199,34 @@ trait DBTableFill
         ]);
     }
 
-
+    protected function populateBannerButtons(Setup $setup)
+    {
+        $setup->db()->insertBulk('xf_terrasphere_core_equipment',
+            [
+                [
+                    'name' => 'Unanswered Threads',
+                    'icon_url' => '',
+                    'url' => 'find-threads/unanswered',
+                    'behavior' => 0,
+                ],
+                [
+                    'name' => 'Shop',
+                    'icon_url' => '',
+                    'url' => 'dbtech-shop',
+                    'behavior' => 0,
+                ],
+                [
+                    'name' => 'Inventory',
+                    'icon_url' => '',
+                    'url' => 'dbtech-shop/inventory',
+                    'behavior' => 0,
+                ],
+                [
+                    'name' => 'Build Editor',
+                    'icon_url' => '',
+                    'url' => 'https://e-foead.github.io/app.html#{player_stats}',
+                    'behavior' => 1,
+                ],
+            ]);
+    }
 }

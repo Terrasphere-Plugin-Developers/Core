@@ -1,0 +1,21 @@
+<xf:title>Character Banner Buttons</xf:title>
+
+<xf:pageaction>
+    <xf:button href="{{ link('terrasphere-core/banner-buttons/add') }}" icon="add">{{ phrase('add') }}</xf:button>
+</xf:pageaction>
+
+<div class="block">
+	<div class="block-container">
+    	<div class="block-body">
+			<xf:datalist>
+				<xf:foreach loop="$bannerButtons" value="$button">
+					<xf:datarow
+						hash="{$button.banner_button_id}"
+						href="{{ link('terrasphere-core/banner-buttons/edit', $button) }}"
+                    	label="{$button.name}"
+                    	delete="{{ link('terrasphere-core/banner-buttons/delete', $button) }}" />
+				</xf:foreach>
+			</xf:datalist>
+		</div>
+	</div>
+</div>

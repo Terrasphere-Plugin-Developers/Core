@@ -55,6 +55,11 @@ class Setup extends AbstractSetup
 
     }
 
+    public function upgrade1000300Step1() {
+        $this->bannerButtonTable($this->schemaManager());
+        $this->populateBannerButtons($this);
+    }
+
     private function alterTypeTable(SchemaManager $sm, string $name){
         $sm->alterTable("xf_terrasphere_core_mastery_" . $name, function (Alter $table){
             $table->dropColumns("icon_url");

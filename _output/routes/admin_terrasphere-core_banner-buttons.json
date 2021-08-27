@@ -1,0 +1,11 @@
+{
+    "route_type": "admin",
+    "route_prefix": "terrasphere-core",
+    "sub_name": "banner-buttons",
+    "format": "banner-buttons/:int<banner_button_id>",
+    "build_class": "",
+    "build_method": "",
+    "controller": "Terrasphere\\Core:BannerButtons",
+    "context": "",
+    "action_prefix": ""
+}
