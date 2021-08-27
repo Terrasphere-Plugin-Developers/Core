@@ -41,18 +41,6 @@
         "version_string": "1.0.0 Alpha",
         "hash": "0e73db3d69388a619bf9502d24d8cec7"
     },
-    "option.terrasphereCoreGPCurrency.txt": {
-        "global_cache": false,
-        "version_id": 1000010,
-        "version_string": "1.0.0 Alpha",
-        "hash": "4908109dab51cd161f3607825691b83d"
-    },
-    "option.terrasphereCoreMPCurrency.txt": {
-        "global_cache": false,
-        "version_id": 1000010,
-        "version_string": "1.0.0 Alpha",
-        "hash": "c4eac418c3bedff78c22ec8bd854d3c3"
-    },
     "option.terrasphereCoreRankAColor.txt": {
         "global_cache": false,
         "version_id": 1000010,
@@ -82,18 +70,6 @@
         "version_id": 1000010,
         "version_string": "1.0.0 Alpha",
         "hash": "b94b0c0adba8cf25a3c280902f49d953"
-    },
-    "option_explain.terrasphereCoreGPCurrency.txt": {
-        "global_cache": false,
-        "version_id": 1000010,
-        "version_string": "1.0.0 Alpha",
-        "hash": "aa47e7fd3aa7a98096f5210d307825f2"
-    },
-    "option_explain.terrasphereCoreMPCurrency.txt": {
-        "global_cache": false,
-        "version_id": 1000010,
-        "version_string": "1.0.0 Alpha",
-        "hash": "3557c97ad2796a3fb620dba24e37b797"
     },
     "option_explain.terrasphereCoreRankAColor.txt": {
         "global_cache": false,
