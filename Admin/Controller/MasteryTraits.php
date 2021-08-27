@@ -133,4 +133,20 @@ class MasteryTraits extends AbstractController
 
         return $form;
     }
+
+    public function actionDelete(Parameterbag $params){
+        $category = $this->filter("traitCategory","string");
+        $entityShortName = $category;
+        $test = $params->entityShortName;
+        $trait = $this->assertRecordExists($entityShortName, $params->id);
+        /** @var \XF\ControllerPlugin\Delete $plugin */
+        $plugin = $this->plugin('XF:Delete');
+        return $plugin->actionDelete(
+            $trait,
+            $this->buildLink('terrasphere-core/masteries/traits/delete', $trait,['traitCategory' => $entityShortName]),
+            $this->buildLink('terrasphere-core/masteries/traits/edit', $trait),
+            $this->buildLink('terrasphere-core/masteries/traits/'),
+            $trait->name
+        );
+    }
 }

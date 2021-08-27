@@ -55,11 +55,6 @@ class Setup extends AbstractSetup
 
     }
 
-    public function upgrade1000300Step1() {
-        $this->bannerButtonTable($this->schemaManager());
-        $this->populateBannerButtons($this);
-    }
-
     private function alterTypeTable(SchemaManager $sm, string $name){
         $sm->alterTable("xf_terrasphere_core_mastery_" . $name, function (Alter $table){
             $table->dropColumns("icon_url");
@@ -67,5 +62,12 @@ class Setup extends AbstractSetup
             $table->addColumn("hex_color","varchar",7)->setDefault('#fff');
         });
     }
+
+    ### UPDATE STUFF  VERSION 1.0.3###
+    public function upgrade1000300Step1() {
+        $this->bannerButtonTable($this->schemaManager());
+        $this->populateBannerButtons($this);
+    }
+
 
 }

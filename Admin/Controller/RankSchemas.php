@@ -120,7 +120,7 @@ class RankSchemas extends \XF\Admin\Controller\AbstractController
             $this->buildLink('terrasphere-core/rank-schemas/delete', $rankSchema),
             $this->buildLink('terrasphere-core/rank-schemas/edit', $rankSchema),
             $this->buildLink('terrasphere-core/rank-schemas/'),
-            $rankSchema->rank_schema_id
+            $rankSchema->display_name
         );
     }
 

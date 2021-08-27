@@ -38,7 +38,7 @@
 										href="{{ link('terrasphere-core/masteries/traits/edit', $type, {'traitCategory' : $type.entityShortName})}}"
 										label="{$type.name}"
 										hint=""
-										delete="www.google.de"
+										delete="{{ link('terrasphere-core/masteries/traits/delete', $type, {'traitCategory' : $type.entityShortName})}}"
 										dir="auto"/>
 							</xf:foreach>
 						</xf:datalist>

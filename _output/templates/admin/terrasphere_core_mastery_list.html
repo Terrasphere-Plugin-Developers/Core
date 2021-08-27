@@ -15,7 +15,7 @@
 								hash="{$mastery.mastery_id}"
 								href="{{ link('terrasphere-core/masteries/edit', $mastery) }}"
 								label="{$mastery.display_name}"
-								delete="todo"
+								delete="{{link('terrasphere-core/masteries/delete', $mastery)}}"
 								/>
 					</xf:foreach>
 				</xf:datalist>

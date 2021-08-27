@@ -89,4 +89,18 @@ class Masteries extends AbstractController
 
         return $form;
     }
+
+    public function actionDelete(ParameterBag $params){
+        $mastery = $this->assertRecordExists('Terrasphere\Core:Mastery', $params->mastery_id);
+        /** @var \XF\ControllerPlugin\Delete $plugin */
+        $plugin = $this->plugin('XF:Delete');
+
+        return $plugin->actionDelete(
+            $mastery,
+            $this->buildLink('terrasphere-core/masteries/delete', $mastery),
+            $this->buildLink('terrasphere-core/masteries/edit', $mastery),
+            $this->buildLink('terrasphere-core/masteries'),
+            $mastery->display_name
+        );
+    }
 }

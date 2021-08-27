@@ -201,7 +201,7 @@ trait DBTableFill
 
     protected function populateBannerButtons(Setup $setup)
     {
-        $setup->db()->insertBulk('xf_terrasphere_core_equipment',
+        $setup->db()->insertBulk('xf_terrasphere_core_banner_button',
             [
                 [
                     'name' => 'Unanswered Threads',
