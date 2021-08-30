@@ -40,9 +40,9 @@
         "hash": "26ba825194dd8d441aaa42a4df41ed27"
     },
     "public/terrasphere_core_generic_macros.html": {
-        "version_id": 1000010,
-        "version_string": "1.0.0 Alpha",
-        "hash": "956b3d06bb038fd8554d1a8c6624c71c"
+        "version_id": 1000300,
+        "version_string": "1.0.3",
+        "hash": "9f1aed6aa6a7c3249c3841208366bd25"
     },
     "public/terrasphere_core_mastery_save_edit.html": {
         "version_id": 1000010,
