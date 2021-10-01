@@ -88,12 +88,10 @@
 	<xf:extension name="after"></xf:extension>
 </xf:macro>
 
-<div class="block" data-type="post" data-href="{{ link('inline-mod') }}">
-	<div class="block-container">
-		<div class="block-body">
-			<xf:macro name="post"
-					arg-post="{$post}"
-					arg-thread="{$thread}"/>
-		</div>
+<div data-type="post" data-href="{{ link('inline-mod') }}">
+	<div class="block-body">
+		<xf:macro name="post"
+				arg-post="{$post}"
+				arg-thread="{$thread}"/>
 	</div>
 </div>
