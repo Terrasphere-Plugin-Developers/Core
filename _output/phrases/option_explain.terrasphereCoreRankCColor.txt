@@ -1,1 +1,0 @@
-The color to use for masteries of rank C.
