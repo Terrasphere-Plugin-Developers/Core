@@ -20,7 +20,9 @@ class Equipment extends Entity
             'equip_group' => ['type' => self::STR],
         ];
 
-        $structure->getters = [];
+        $structure->getters = [
+            'icon_url' => true,
+        ];
 
         $structure->relations = [
             'RankSchema' => [
@@ -32,5 +34,11 @@ class Equipment extends Entity
         ];
 
         return  $structure;
+    }
+
+
+    //getter that overrides icon_url property. To get the underlying actual value gotta work with the _values array
+    public function getIconUrl(){
+        return \XF::options()->boardUrl . '/' . $this->_values['icon_url'];
     }
 }
