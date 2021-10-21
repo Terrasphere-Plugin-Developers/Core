@@ -1,4 +1,10 @@
 {
+    "admin_navigation.TerrasphereCoreJSONImporter.txt": {
+        "global_cache": false,
+        "version_id": 1000700,
+        "version_string": "1.0.7",
+        "hash": "36216418a6cd4fae180ba1bfe18d5358"
+    },
     "admin_navigation.TerrasphereCoreMasteries.txt": {
         "global_cache": false,
         "version_id": 1000010,

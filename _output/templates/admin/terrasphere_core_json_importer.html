@@ -1,0 +1,15 @@
+<xf:title>Mastery JSON Importer</xf:title>
+
+<div class="block">
+	<div class="block-container">
+		Response: {$ret}
+	</div>
+	<xf:form action="{{ link('terrasphere-core/json-importer/masteryImport', null, {}) }}" class="block">
+		<xf:textarearow
+			name="content"
+			value=""
+			label="Import Masteries from JSON text."/>
+		
+		<xf:submitrow sticky="false" icon="Import"/>
+	</xf:form>
+</div>

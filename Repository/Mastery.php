@@ -106,4 +106,9 @@ class Mastery extends Repository
         ->where('mastery_id', $masteryID)
         ->fetchOne();
     }
+
+    public function massInsert(array $sql)
+    {
+        $this->db()->insertBulk("xf_terrasphere_core_mastery", $sql);
+    }
 }
