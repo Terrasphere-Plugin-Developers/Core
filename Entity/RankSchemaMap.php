@@ -32,6 +32,6 @@ class RankSchemaMap extends Entity
                 'primary' => true
             ]
         ];
-        return  $structure;
+        return $structure;
     }
 }

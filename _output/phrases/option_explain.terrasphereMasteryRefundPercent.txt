@@ -1,0 +1,1 @@
+Refunding masteries upgraded past the grace period only returns this percent of the cumulative cost.

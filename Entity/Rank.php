@@ -22,7 +22,7 @@ class Rank extends Entity
         ];
 
 
-        return  $structure;
+        return $structure;
     }
 
     public static function maxTier($containsFinder): int
@@ -46,11 +46,42 @@ class Rank extends Entity
             ->fetchOne();
     }
 
-    public function getNextRank():Rank
+    public function getNextRank() : Rank
     {
-        return $this->finder('Terrasphere\Core:Rank')
-            ->where('tier', ($this->tier)+1)
+        /** @var Rank $ret */
+        $ret = $this->finder('Terrasphere\Core:Rank')
+            ->where('tier', ($this['tier'])+1)
             ->fetchOne();
+        return $ret;
     }
 
+    /**
+     * Full cost of this rank, including all prerequisites.
+     */
+    public function getCumulativeCost(RankSchema $rankSchema) : int
+    {
+        $rankSchemaCost = $this->finder('Terrasphere\Core:RankSchemaMap')
+            ->with('Rank')
+            ->where([
+                ['rank_schema_id', $rankSchema['rank_schema_id']],
+                ['Rank.tier', '<=', $this['tier']],
+            ])
+            ->fetch()->toArray();
+
+        $cost = 0;
+        foreach($rankSchemaCost as $value)
+            $cost += $value['cost'];
+
+        return $cost;
+    }
+
+    public function getRefund(RankSchema $rankSchema) : int
+    {
+        $fullRefund = $this->getCumulativeCost($rankSchema);
+
+        if(\XF::options()['terrasphereMasteryRefundRankSkips'] > $this['tier'])
+            return $fullRefund;
+
+        return ((float) $fullRefund) * 0.01 * (float) (\XF::options()['terrasphereMasteryRefundPercent']);
+    }
 }

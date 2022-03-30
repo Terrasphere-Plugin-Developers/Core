@@ -56,4 +56,13 @@ class Mastery extends Entity
 
         return  $structure;
     }
+
+    public function getRankSchema() : RankSchema
+    {
+        $type = $this->finder('Terrasphere\Core:MasteryType')->where('mastery_type_id', $this['mastery_type_id'])->fetchOne();
+        /** @var RankSchema $rankSchema */
+        $rankSchema = $this->finder('Terrasphere\Core:RankSchema')->with('Currency')->where('rank_schema_id', $type['rank_schema_id'])->fetchOne();
+
+        return $rankSchema;
+    }
 }

@@ -30,7 +30,8 @@ class BannerButton extends Entity
     public function getParsedURL($user)
     {
         $url = $this['url'];
-        if(preg_match("/{id}/", $url))
+
+        while(str_contains($url, "{id}"))
         {
             $replaceString = $user->user_id;
             $url = str_replace("{id}", $replaceString, $url);

@@ -1,1 +1,8 @@
-[]
+{
+    "terrasphereMasteryRefundPercent.json": {
+        "hash": "9e39c0fecdf798ccb37ff3d385741ca8"
+    },
+    "terrasphereMasteryRefundRankSkips.json": {
+        "hash": "39ade5d0988c952256d4ec35c46d9f37"
+    }
+}
