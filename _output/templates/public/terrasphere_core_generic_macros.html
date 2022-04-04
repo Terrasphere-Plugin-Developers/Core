@@ -11,3 +11,16 @@
 		<span>Sheet</span>
 	</a>
 </xf:macro>
+
+<xf:macro name="character_sheet_thread_link"
+		  arg-user="!">
+	<a href="{{ link('members/characterthread', $user, {}) }}"
+	   class="button"
+	   style="
+			width: 90%;
+    		white-space: pre-wrap;
+    		margin: 4px auto;
+    		padding: 2px 4px 2px 4px;">
+		<span>Char Thread</span>
+	</a>
+</xf:macro>
