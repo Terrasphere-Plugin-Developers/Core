@@ -15,7 +15,7 @@ class MasteryTraits extends AbstractController
     private $typeShortName = "Terrasphere\Core:MasteryType";
     public function actionIndex(): View
     {
-        $masteryType = $this->finder('Terrasphere\Core:MasteryType')->where('system_type',false)->fetch();
+        $masteryType = $this->finder('Terrasphere\Core:MasteryType')->fetch();
         $masteryRole = $this->finder('Terrasphere\Core:MasteryRole')->fetch();
         $masterySave = $this->finder('Terrasphere\Core:MasterySave')->fetch();
         $masteryExpertise = $this->finder('Terrasphere\Core:MasteryExpertise')->fetch();
