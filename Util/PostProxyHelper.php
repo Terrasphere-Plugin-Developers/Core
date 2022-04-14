@@ -10,6 +10,8 @@ class PostProxyHelper
     {
         $post = $controller->finder("XF:Post")->whereId($postID)->with("Thread")->fetchOne();
 
+        if($post == null) return null;
+
         return [
             'post' => $post,
             'thread' => $post->Thread,

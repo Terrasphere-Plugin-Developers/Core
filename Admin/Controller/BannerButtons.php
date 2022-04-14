@@ -33,6 +33,20 @@ class BannerButtons extends AbstractController
         return $this->actionAddOrEdit($newButton);
     }
 
+    public function actionDelete(ParameterBag $params)
+    {
+        $bannerButton = $this->assertRecordExists("Terrasphere\Core:BannerButton", $params->banner_button_id);
+
+        $plugin = $this->plugin('XF:Delete');
+        return $plugin->actionDelete(
+            $bannerButton,
+            $this->buildLink('terrasphere-core/banner-buttons/delete', $bannerButton),
+            $this->buildLink('terrasphere-core/banner-buttons/edit', $bannerButton),
+            $this->buildLink('terrasphere-core/banner-buttons/'),
+            $bannerButton['name']
+        );
+    }
+
     public function actionSave(ParameterBag $params)
     {
         try {
