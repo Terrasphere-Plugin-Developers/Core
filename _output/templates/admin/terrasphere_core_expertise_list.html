@@ -1,0 +1,25 @@
+<xf:title>{{ phrase('terrasphere_core_expertise') }}</xf:title>
+
+<xf:pageaction>
+	<xf:button href="{{ link('terrasphere-core/expertise/add') }}" icon="add">{{ phrase('add') }}</xf:button>
+</xf:pageaction>
+
+<div class="block">
+	<div class="block-container">
+		<xf:foreach loop="$expertiseGroups" value="$expertiseGroup">
+			<h2 class="block-header">{$expertiseGroup.name}</h2>
+			<div class="block-body">
+				<xf:datalist>
+					<xf:foreach loop="{$expertiseGroup.expertises}" value="$expertise">
+						<xf:datarow
+							hash="{$expertise.expertise_id}"
+							href="{{ link('terrasphere-core/expertise/edit', $expertise) }}"
+							label="{$expertise.display_name}"
+							delete="{{link('terrasphere-core/expertise/delete', $expertise)}}"
+							/>
+					</xf:foreach>
+				</xf:datalist>
+			</div>
+		</xf:foreach>
+	</div>
+</div>

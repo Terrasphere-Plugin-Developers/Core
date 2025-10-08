@@ -195,8 +195,34 @@ trait DBTableFill
                 'equip_group' => 'Armor',
                 'rank_schema_id' => $rankSchemaId,
             ],
-
         ]);
+
+        $this->populateAccessoryUpdate($setup, $rankSchemaId);
+    }
+
+    private function populateAccessoryUpdate($setup, $rankSchemaId)
+    {
+        $setup->db()->insertBulk('xf_terrasphere_core_equipment',
+            [
+                [
+                    'display_name' => 'Combat Accessory',
+                    'icon_url' => 'styles/default/Terrasphere/Charactermanager/accessory-combat.png',
+                    'equip_group' => 'Accessory',
+                    'rank_schema_id' => $rankSchemaId,
+                ],
+                [
+                    'display_name' => 'Utility Accessory',
+                    'icon_url' => 'styles/default/Terrasphere/Charactermanager/accessory-utility.png',
+                    'equip_group' => 'Accessory',
+                    'rank_schema_id' => $rankSchemaId,
+                ],
+                [
+                    'display_name' => 'Magic Accessory',
+                    'icon_url' => 'styles/default/Terrasphere/Charactermanager/accessory-magic.png',
+                    'equip_group' => 'Accessory',
+                    'rank_schema_id' => $rankSchemaId,
+                ],
+            ]);
     }
 
     protected function populateBannerButtons(Setup $setup)

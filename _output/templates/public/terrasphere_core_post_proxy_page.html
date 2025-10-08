@@ -4,7 +4,7 @@
 		data-lb-id="post-{$post.post_id}"
 		data-lb-caption-desc="{{ $post.User ? $post.User.username : $post.username }} &middot; {{ date_time($post.post_date) }}">
 
-		<xf:if is="$post.isFirstPost()">
+		<xf:if is="$post != null && $post.isFirstPost()">
 			<xf:macro template="custom_fields_macros" name="custom_fields_view"
 				arg-type="threads"
 				arg-group="before"

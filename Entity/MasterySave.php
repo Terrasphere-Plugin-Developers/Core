@@ -24,7 +24,7 @@ class MasterySave extends Entity implements iTraitCommon {
             'formStructure' => true
         ];
 
-        return  $structure;
+        return $structure;
     }
 
     public function getID()
@@ -36,5 +36,4 @@ class MasterySave extends Entity implements iTraitCommon {
     {
         return $this->structure()->shortName;
     }
-
 }

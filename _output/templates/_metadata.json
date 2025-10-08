@@ -4,6 +4,16 @@
         "version_string": "1.0.2",
         "hash": "6367c68f9c90a03fbcb2c187b3444517"
     },
+    "admin/terrasphere_core_expertise_edit.html": {
+        "version_id": 1001300,
+        "version_string": "1.0.13",
+        "hash": "f49deb3fe753d3870ece2f9773d6361b"
+    },
+    "admin/terrasphere_core_expertise_list.html": {
+        "version_id": 1001300,
+        "version_string": "1.0.13",
+        "hash": "fafd60ea74f7d062a732a02cf4d2cee1"
+    },
     "admin/terrasphere_core_json_importer.html": {
         "version_id": 1000700,
         "version_string": "1.0.7",
@@ -15,9 +25,9 @@
         "hash": "4a79610d48765a595bf6a9d6ee19b459"
     },
     "admin/terrasphere_core_mastery_list.html": {
-        "version_id": 1000300,
-        "version_string": "1.0.3",
-        "hash": "3caf6119bb7911da54fa9daeeb3454ae"
+        "version_id": 1001300,
+        "version_string": "1.0.13",
+        "hash": "922adc15a023fd61f432c7e2aff26d53"
     },
     "admin/terrasphere_core_mastery_trait_basic_edit.html": {
         "version_id": 1000100,
@@ -55,8 +65,8 @@
         "hash": "22391915628809b403c471fcb6f46563"
     },
     "public/terrasphere_core_post_proxy_page.html": {
-        "version_id": 1000600,
-        "version_string": "1.0.6",
-        "hash": "1c8ee70c6c680a356f0a7e5df46af130"
+        "version_id": 1001300,
+        "version_string": "1.0.13",
+        "hash": "067bf78160f525b9e574cfa89702fe06"
     }
 }

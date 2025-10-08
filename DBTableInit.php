@@ -21,6 +21,7 @@ trait DBTableInit
         $this->rankSchemaMapTable($sm);
         $this->equipmentTable($sm);
         $this->bannerButtonTable($sm);
+        $this->expertiseTable($sm);
 
         // etc...
     }
@@ -39,6 +40,7 @@ trait DBTableInit
         $sm->dropTable('xf_terrasphere_core_rank_schema_map');
         $sm->dropTable('xf_terrasphere_core_equipment');
         $sm->dropTable('xf_terrasphere_core_banner_button');
+        $sm->dropTable('xf_terrasphere_core_expertise');
         // etc...
     }
 
@@ -148,6 +150,21 @@ trait DBTableInit
                 $table->addColumn('url', 'varchar',999)->setDefault('');
                 $table->addColumn('behavior', 'int')->setDefault(0);
             }
+        );
+    }
+
+    private function expertiseTable(SchemaManager $sm)
+    {
+        $sm->createTable(
+            "xf_terrasphere_core_expertise", function (create $table) {
+            $table->addColumn("expertise_id", "int")->autoIncrement();
+            $table->addColumn("role_id", "int");
+            $table->addColumn("display_name", "varchar", 50)->setDefault('');
+            $table->addColumn("icon_url", "varchar", 999)->setDefault('');
+            $table->addColumn("thumbnail_url", "varchar", 999)->setDefault('');
+            $table->addColumn("wiki_url","varchar",999)->setDefault('');
+            $table->addColumn("color", "varchar", 10)->setDefault('#FFFFFFFF');
+        }
         );
     }
 }

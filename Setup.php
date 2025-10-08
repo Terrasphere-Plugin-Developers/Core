@@ -69,5 +69,14 @@ class Setup extends AbstractSetup
         $this->populateBannerButtons($this);
     }
 
+    ### UPDATE STUFF  VERSION 1.2.0###
+    public function upgrade1002000Step1() {
+        $this->expertiseTable($this->schemaManager());
 
+        $rankSchemaId = $this->db()->fetchRow(
+            'SELECT rank_schema_id FROM xf_terrasphere_core_rank_schema WHERE name = ?', 'Equipment Schema'
+        )['rank_schema_id'];
+        $this->populateAccessoryUpdate($this, $rankSchemaId);
+        // TODO: Drop unused columns from mastery table; also in DBTableInit (and possibly DBTableFill)
+    }
 }

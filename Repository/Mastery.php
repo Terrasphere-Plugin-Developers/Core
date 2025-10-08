@@ -3,6 +3,7 @@
 namespace Terrasphere\Core\Repository;
 
 use XF\Mvc\Entity\ArrayCollection;
+use XF\Mvc\Entity\Entity;
 use XF\Mvc\Entity\Finder;
 use XF\Mvc\Entity\Repository;
 
@@ -84,9 +85,9 @@ class Mastery extends Repository
 
     /**
      * @param int $masteryID
-     * @return \Terrasphere\Core\Entity\Mastery || null
+     * @return \Terrasphere\Core\Entity\Mastery
      */
-    public function getMasteryByID(int $masteryID)
+    public function getMasteryByID(int $masteryID): ?Entity
     {
         return $this
             ->finder('Terrasphere\Core:Mastery')
@@ -98,11 +99,11 @@ class Mastery extends Repository
      * @param int $masteryID
      * @return \Terrasphere\Core\Entity\Mastery
      */
-    public function getMasteryWithTraitsByID(int $masteryID): \Terrasphere\Core\Entity\Mastery
+    public function getMasteryWithTraitsByID(int $masteryID): ?Entity
     {
         return $this
         ->finder('Terrasphere\Core:Mastery')
-        ->with(["MasteryType", "MasteryRole", "MasteryExpertise", "MasterySave"])
+        ->with(["MasteryType", "MasteryRole", "MasterySave"])
         ->where('mastery_id', $masteryID)
         ->fetchOne();
     }

@@ -29,6 +29,12 @@
         "version_string": "1.0.0 Alpha",
         "hash": "d6ab5a0fc7bb68ad44cd2c779038c907"
     },
+    "admin_navigation.terrasphereCoreExpertise.txt": {
+        "global_cache": false,
+        "version_id": 1001300,
+        "version_string": "1.0.13",
+        "hash": "57b0eaafb250dd5b862d252a05baac36"
+    },
     "admin_navigation.terrasphereCoreMasteryList.txt": {
         "global_cache": false,
         "version_id": 1000010,
@@ -47,6 +53,12 @@
         "version_string": "1.0.0 Alpha",
         "hash": "0e73db3d69388a619bf9502d24d8cec7"
     },
+    "option.terrasphereAlterType.txt": {
+        "global_cache": false,
+        "version_id": 1001300,
+        "version_string": "1.0.13",
+        "hash": "6f8438ce620fe02afa9ea11b521757b4"
+    },
     "option.terrasphereMasteryRefundPercent.txt": {
         "global_cache": false,
         "version_id": 1000800,
@@ -58,6 +70,12 @@
         "version_id": 1000800,
         "version_string": "1.0.8",
         "hash": "5d7888e239777bb9759ae36896c5c0ea"
+    },
+    "option_explain.terrasphereAlterType.txt": {
+        "global_cache": false,
+        "version_id": 1001300,
+        "version_string": "1.0.13",
+        "hash": "98a9749253ae1f957c57d08d31b4ef9e"
     },
     "option_explain.terrasphereMasteryRefundPercent.txt": {
         "global_cache": false,
