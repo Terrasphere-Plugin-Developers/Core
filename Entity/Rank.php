@@ -55,6 +55,15 @@ class Rank extends Entity
         return $ret;
     }
 
+    public function getPreviousRank() : Rank
+    {
+        /** @var Rank $ret */
+        $ret = $this->finder('Terrasphere\Core:Rank')
+            ->where('tier', ($this['tier'])-1)
+            ->fetchOne();
+        return $ret;
+    }
+
     /**
      * Full cost of this rank, including all prerequisites.
      */
