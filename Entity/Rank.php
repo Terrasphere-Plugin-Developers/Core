@@ -84,7 +84,7 @@ class Rank extends Entity
         return $cost;
     }
 
-    public function getRefund(RankSchema $rankSchema) : int
+    public function getMasteryRefund(RankSchema $rankSchema) : int
     {
         $fullRefund = $this->getCumulativeCost($rankSchema);
 
@@ -92,5 +92,15 @@ class Rank extends Entity
             return $fullRefund;
 
         return ((float) $fullRefund) * 0.01 * (float) (\XF::options()['terrasphereMasteryRefundPercent']);
+    }
+
+    public function getEquipmentRefund(RankSchema $rankSchema) : int
+    {
+        $fullRefund = $this->getCumulativeCost($rankSchema);
+
+        if(\XF::options()['terrasphereEquipmentRefundRankSkips'] > $this['tier'])
+            return $fullRefund;
+
+        return ((float) $fullRefund) * 0.01 * (float) (\XF::options()['terrasphereEquipmentRefundPercent']);
     }
 }
